@@ -44,6 +44,9 @@ class CategoryController extends Controller
 
     /**
      * Store a newly created resource in storage.
+     *
+     * @param CategoryRequest $request
+     * @return RedirectResponse
      */
     public function store(CategoryRequest $request): RedirectResponse
     {
@@ -64,6 +67,10 @@ class CategoryController extends Controller
 
     /**
      * Update the specified resource in storage.
+     *
+     * @param CategoryRequest $request
+     * @param Category $category
+     * @return RedirectResponse
      */
     public function update(CategoryRequest $request, Category $category): RedirectResponse
     {
