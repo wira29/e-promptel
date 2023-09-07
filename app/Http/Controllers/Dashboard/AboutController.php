@@ -4,15 +4,22 @@ namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class AboutController extends Controller
 {
+    public function __construct()
+    {
+    }
+
     /**
      * Display a listing of the resource.
+     *
+     * @return View
      */
-    public function index()
+    public function index(): View
     {
-        //
+        return view('dashboard.pages.about');
     }
 
     /**

@@ -2,19 +2,19 @@
 
 namespace App\Contracts\Repositories;
 
-use App\Contracts\Interfaces\CategoryInterface;
-use App\Models\Category;
-use App\Traits\Datatables\CategoryDatatable;
+use App\Contracts\Interfaces\ArticleInterface;
+use App\Models\Article;
+use App\Traits\Datatables\ArticleDatatable;
 use Exception;
-use Illuminate\Database\QueryException;
 
-class CategoryRepository extends BaseRepository implements CategoryInterface
+class ArticleRepository extends BaseRepository implements ArticleInterface
 {
-    use CategoryDatatable;
 
-    public function __construct(Category $category)
+    use ArticleDatatable;
+
+    public function __construct(Article $article)
     {
-        $this->model = $category;
+        $this->model = $article;
     }
 
     /**
@@ -25,7 +25,7 @@ class CategoryRepository extends BaseRepository implements CategoryInterface
      */
     public function datatable(): mixed
     {
-        return $this->CategoryMockup($this->model->query());
+        return $this->ArticleMockup($this->model->query());
     }
 
     /**
@@ -37,15 +37,7 @@ class CategoryRepository extends BaseRepository implements CategoryInterface
      */
     public function delete(mixed $id): mixed
     {
-        try {
-            return $this->model->query()
-                ->findOrFail($id)
-                ->delete();
-        } catch (QueryException $e) {
-            if ($e->errorInfo[1] == 1451) return false;
-        }
-
-        return true;
+        // TODO: Implement delete() method.
     }
 
     /**
@@ -55,8 +47,7 @@ class CategoryRepository extends BaseRepository implements CategoryInterface
      */
     public function get(): mixed
     {
-        return $this->model->query()
-            ->get();
+        // TODO: Implement get() method.
     }
 
     /**
@@ -68,8 +59,7 @@ class CategoryRepository extends BaseRepository implements CategoryInterface
      */
     public function store(array $data): mixed
     {
-        return $this->model->query()
-            ->create($data);
+        // TODO: Implement store() method.
     }
 
     /**
@@ -82,8 +72,6 @@ class CategoryRepository extends BaseRepository implements CategoryInterface
      */
     public function update(mixed $id, array $data): mixed
     {
-        return $this->model->query()
-            ->findOrFail($id)
-            ->update($data);
+        // TODO: Implement update() method.
     }
 }
