@@ -6,6 +6,7 @@ use App\Contracts\Interfaces\ArticleInterface;
 use App\Models\Article;
 use App\Traits\Datatables\ArticleDatatable;
 use Exception;
+use Illuminate\Database\QueryException;
 
 class ArticleRepository extends BaseRepository implements ArticleInterface
 {
@@ -25,7 +26,7 @@ class ArticleRepository extends BaseRepository implements ArticleInterface
      */
     public function datatable(): mixed
     {
-        return $this->ArticleMockup($this->model->query());
+        return $this->ArticleMockup($this->model->query()->with('category'));
     }
 
     /**
@@ -37,7 +38,15 @@ class ArticleRepository extends BaseRepository implements ArticleInterface
      */
     public function delete(mixed $id): mixed
     {
-        // TODO: Implement delete() method.
+        try {
+            return $this->model->query()
+                ->findOrFail($id)
+                ->delete();
+        } catch (QueryException $e) {
+            if ($e->errorInfo[1] == 1451) return false;
+        }
+
+        return true;
     }
 
     /**
@@ -59,7 +68,8 @@ class ArticleRepository extends BaseRepository implements ArticleInterface
      */
     public function store(array $data): mixed
     {
-        // TODO: Implement store() method.
+        return $this->model->query()
+            ->create($data);
     }
 
     /**
@@ -72,6 +82,8 @@ class ArticleRepository extends BaseRepository implements ArticleInterface
      */
     public function update(mixed $id, array $data): mixed
     {
-        // TODO: Implement update() method.
+        return $this->model->query()
+            ->findOrFail($id)
+            ->update($data);
     }
 }

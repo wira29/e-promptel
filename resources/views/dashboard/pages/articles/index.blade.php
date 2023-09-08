@@ -84,12 +84,12 @@
                         name: 'title'
                     },
                     {
-                        data: 'article_category.name',
-                        name: 'article_category.name'
+                        data: 'category.name',
+                        name: 'category.name'
                     },
                     {
-                        data: 'photo',
-                        name: 'photo',
+                        data: 'thumbnail',
+                        name: 'thumbnail',
                         orderable: false,
                         searchable: false
                     },
