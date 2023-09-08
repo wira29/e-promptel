@@ -4,8 +4,10 @@ namespace App\Providers;
 
 use App\Models\Article;
 use App\Models\Audio;
+use App\Models\Video;
 use App\Observers\ArticleObserver;
 use App\Observers\AudioObserver;
+use App\Observers\VideoObserver;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -30,6 +32,7 @@ class EventServiceProvider extends ServiceProvider
     {
         Article::observe(ArticleObserver::class);
         Audio::observe(AudioObserver::class);
+        Video::observe(VideoObserver::class);
     }
 
     /**
