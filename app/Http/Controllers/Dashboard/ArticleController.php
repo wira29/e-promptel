@@ -90,6 +90,9 @@ class ArticleController extends Controller
 
     /**
      * Remove the specified resource from storage.
+     *
+     * @param Article $article
+     * @return RedirectResponse
      */
     public function destroy(Article $article): RedirectResponse
     {

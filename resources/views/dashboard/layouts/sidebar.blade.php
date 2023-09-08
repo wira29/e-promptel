@@ -29,7 +29,7 @@
             <a class="sidebar-link {{ request()->routeIs('categories.*') ? 'active' : '' }}"
                href="{{ route('categories.index') }}" aria-expanded="false">
                   <span>
-                    <i class="ti ti-list-details"></i>
+                    <i class="ti ti-music"></i>
                   </span>
                 <span class="hide-menu">Materi Audio</span>
             </a>
@@ -38,7 +38,7 @@
             <a class="sidebar-link {{ request()->routeIs('categories.*') ? 'active' : '' }}"
                href="{{ route('categories.index') }}" aria-expanded="false">
                   <span>
-                    <i class="ti ti-list-details"></i>
+                    <i class="ti ti-video"></i>
                   </span>
                 <span class="hide-menu">Materi Video</span>
             </a>
@@ -102,7 +102,7 @@
         <li class="sidebar-item">
             <a class="sidebar-link" href="{{ route('about.index') }}" aria-expanded="false">
                   <span>
-                    <i class="ti ti-help"></i>
+                    <i class="ti ti-crown"></i>
                   </span>
                 <span class="hide-menu">Visi Misi</span>
             </a>
@@ -110,7 +110,7 @@
         <li class="sidebar-item">
             <a class="sidebar-link" href="{{ route('about.index') }}" aria-expanded="false">
                   <span>
-                    <i class="ti ti-help"></i>
+                    <i class="ti ti-layout-board"></i>
                   </span>
                 <span class="hide-menu">Struktur Organisasi</span>
             </a>
