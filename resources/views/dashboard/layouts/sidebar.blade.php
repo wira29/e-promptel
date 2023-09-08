@@ -21,13 +21,22 @@
             <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
             <span class="hide-menu">Dashboard</span>
         </li>
+        <li class="sidebar-item">
+            <a class="sidebar-link {{ request()->routeIs('dashboard.home') ? 'active' : '' }}"
+               href="{{ route('dashboard.home') }}" aria-expanded="false">
+                  <span>
+                    <i class="ti ti-home"></i>
+                  </span>
+                <span class="hide-menu">Beranda</span>
+            </a>
+        </li>
         <li class="nav-small-cap">
             <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
             <span class="hide-menu">Layanan</span>
         </li>
         <li class="sidebar-item">
-            <a class="sidebar-link {{ request()->routeIs('categories.*') ? 'active' : '' }}"
-               href="{{ route('categories.index') }}" aria-expanded="false">
+            <a class="sidebar-link {{ request()->routeIs('videos.*') ? 'active' : '' }}"
+               href="{{ route('audios.index') }}" aria-expanded="false">
                   <span>
                     <i class="ti ti-music"></i>
                   </span>
@@ -35,8 +44,8 @@
             </a>
         </li>
         <li class="sidebar-item">
-            <a class="sidebar-link {{ request()->routeIs('categories.*') ? 'active' : '' }}"
-               href="{{ route('categories.index') }}" aria-expanded="false">
+            <a class="sidebar-link {{ request()->routeIs('videos.*') ? 'active' : '' }}"
+               href="{{ route('videos.index') }}" aria-expanded="false">
                   <span>
                     <i class="ti ti-video"></i>
                   </span>
@@ -92,7 +101,8 @@
             <span class="hide-menu">Pengaturan</span>
         </li>
         <li class="sidebar-item">
-            <a class="sidebar-link" href="{{ route('about.index') }}" aria-expanded="false">
+            <a class="sidebar-link {{ request()->routeIs('about.*') ? 'active' : '' }}"
+               href="{{ route('about.index') }}" aria-expanded="false">
                   <span>
                     <i class="ti ti-help"></i>
                   </span>
@@ -100,7 +110,8 @@
             </a>
         </li>
         <li class="sidebar-item">
-            <a class="sidebar-link" href="{{ route('about.index') }}" aria-expanded="false">
+            <a class="sidebar-link {{ request()->routeIs('vision-mission.*') ? 'active' : '' }}"
+               href="{{ route('vision-mission.index') }}" aria-expanded="false">
                   <span>
                     <i class="ti ti-crown"></i>
                   </span>
@@ -108,7 +119,7 @@
             </a>
         </li>
         <li class="sidebar-item">
-            <a class="sidebar-link" href="{{ route('about.index') }}" aria-expanded="false">
+            <a class="sidebar-link" href="#" aria-expanded="false">
                   <span>
                     <i class="ti ti-layout-board"></i>
                   </span>

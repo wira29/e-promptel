@@ -2,10 +2,13 @@
 
 use App\Http\Controllers\Dashboard\AboutController;
 use App\Http\Controllers\Dashboard\ArticleController;
+use App\Http\Controllers\Dashboard\AudioController;
 use App\Http\Controllers\Dashboard\CategoryController;
 use App\Http\Controllers\Dashboard\ChangePasswordController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Dashboard\ProfileController;
+use App\Http\Controllers\Dashboard\VideoController;
+use App\Http\Controllers\Dashboard\VisionMissionController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -34,8 +37,14 @@ Route::middleware('auth')->prefix('dashboard')->group(function () {
     Route::resources([
         'categories' => CategoryController::class,
         'articles' => ArticleController::class,
-        'about' => AboutController::class
+        'audios' => AudioController::class,
+        'videos' => VideoController::class
     ]);
+
+    Route::resources([
+        'about' => AboutController::class,
+        'vision-mission' => VisionMissionController::class
+    ], ['only' => ['index', 'update']]);
 
     Route::name('user.')->group(function () {
         Route::get('profile', [ProfileController::class, 'index'])->name('profile');
