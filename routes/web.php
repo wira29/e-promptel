@@ -22,7 +22,31 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('landing.index');
-});
+})->name('home');
+Route::get('/news', function () {
+    return view('landing.news');
+})->name('news');
+Route::get('/news/{id}', function () {
+    return view('landing.detail_news');
+})->name('detail-news');
+Route::get('/videos', function () {
+    return view('landing.videos');
+})->name('videos');
+Route::get('/videos/{id}', function () {
+    return view('landing.detail_video');
+})->name('detail-videos');
+Route::get('/audios', function () {
+    return view('landing.audios');
+})->name('audios');
+Route::get('/audios/{id}', function () {
+    return view('landing.detail_audio');
+})->name('detail-audio');
+Route::get('/articles', function () {
+    return view('landing.articles');
+})->name('articles');
+Route::get('/contact', function () {
+    return view('landing.contact');
+})->name('contact');
 
 Auth::routes();
 
@@ -44,4 +68,4 @@ Route::middleware('auth')->prefix('dashboard')->group(function () {
     });
 });
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
