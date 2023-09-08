@@ -2,64 +2,40 @@
 
 namespace App\Http\Controllers\Dashboard;
 
+use App\Contracts\Interfaces\VisionMissionInterface;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Http\Requests\VisionMissionRequest;
+use App\Models\VisionMission;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\View\View;
 
 class VisionMissionController extends Controller
 {
+    private VisionMissionInterface $visionMission;
+
+    public function __construct(VisionMissionInterface $visionMission)
+    {
+        $this->visionMission = $visionMission;
+    }
+
     /**
      * Display a listing of the resource.
+     *
+     * @return View
      */
-    public function index()
+    public function index(): View
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
+        $data = $this->visionMission->get();
+        return view('dashboard.pages.vision-mission.index', compact('data'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(VisionMissionRequest $request, VisionMission $vision_mission): RedirectResponse
     {
-        //
+        $this->visionMission->update($vision_mission->id, $request->validated());
+        return back()->with('success', trans('alert.update_success'));
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
 }
