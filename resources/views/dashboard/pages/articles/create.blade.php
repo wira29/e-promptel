@@ -1,3 +1,4 @@
+@php use App\Enums\ArticleStatusEnum; @endphp
 @extends('dashboard.layouts.app')
 @section('style')
     <link rel="stylesheet" href="{{ asset('dashboard_assets/dist/libs/select2/dist/css/select2.min.css') }}">
@@ -34,7 +35,7 @@
                             </div>
                             <div class="col-md-12">
                                 <div class="form-floating mb-3">
-                                    <input value="{{ old('ate') }}" autocomplete="off" name="date" type="date"
+                                    <input value="{{ old('date') }}" autocomplete="off" name="date" type="date"
                                            class="form-control @error('date') is-invalid @enderror">
                                     <label for="tb-fname">Tanggal</label>
                                     @error('date')
@@ -46,17 +47,17 @@
                             </div>
                             <div class="col-md-12">
                                 <div class="form-floating mb-3">
-                                    <select name="article_category_id"
-                                            class="form-control @error('article_category_id') is-invalid @enderror select2-ajax">
+                                    <select name="category_id"
+                                            class="form-control @error('category_id') is-invalid @enderror select2-ajax">
                                         <option>--Pilih Kategori Artikel--</option>
                                         @foreach($categories as $category)
                                             <option
-                                                {{ old('article_category_id') == $category->id ? 'selected' : '' }} value="{{ $category->id }}">
+                                                {{ old('category_id') == $category->id ? 'selected' : '' }} value="{{ $category->id }}">
                                                 {{ $category->name }}
                                             </option>
                                         @endforeach
                                     </select>
-                                    @error('article_category_id')
+                                    @error('category_id')
                                     <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
                                                 </span>
@@ -66,8 +67,14 @@
                             <div class="col-md-12">
                                 <div class="form-floating mb-3">
                                     <select name="status" class="form-control">
-                                        <option {{ old('status') == '1' ? 'selected' : '' }} value="1"> Publish</option>
-                                        <option {{ old('status') == '0' ? 'selected' : '' }} value="0">Draft</option>
+                                        <option
+                                            {{ old('status') == ArticleStatusEnum::ACTIVE->value ? 'selected' : '' }} value="1">
+                                            Publish
+                                        </option>
+                                        <option
+                                            {{ old('status') == ArticleStatusEnum::DRAFT->value ? 'selected' : '' }} value="0">
+                                            Draft
+                                        </option>
                                     </select>
                                     <label for="tb-cpwd">Status Artikel</label>
                                     @error('status')
@@ -84,14 +91,20 @@
                             </div>
                             <div class="col-md-12">
                                 <div class="form-floating mt-3 mb-3">
-                                    <input name="photo" type="file"
-                                           class="form-control @error('photo') is-invalid @enderror" id="tb-cpwd"
+                                    <input name="thumbnail" type="file"
+                                           class="form-control @error('thumbnail') is-invalid @enderror" id="tb-cpwd"
                                            placeholder="Password">
-                                    @error('photo')
+                                    @error('thumbnail')
                                     <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
                                                 </span>
                                     @enderror
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-floating mb-4">
+                                    <label for="tb-cpwd">Konten Artikel</label>
                                 </div>
                             </div>
 

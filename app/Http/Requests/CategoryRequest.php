@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Contracts\Validation\ValidationRule;
+use Illuminate\Validation\Rule;
 
 class CategoryRequest extends BaseRequest
 {
@@ -14,7 +15,7 @@ class CategoryRequest extends BaseRequest
     public function rules(): array
     {
         return [
-            'name' => 'required'
+            'name' => ['required', Rule::unique('categories')->ignore($this->category)]
         ];
     }
 
@@ -27,7 +28,8 @@ class CategoryRequest extends BaseRequest
     public function messages(): array
     {
         return [
-            'name.required' => 'Nama kategori harus diisi'
+            'name.required' => 'Nama kategori harus diisi',
+            'name.unique' => 'Nama kategori telah digunakan'
         ];
     }
 }

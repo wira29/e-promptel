@@ -5,7 +5,12 @@ namespace App\Http\Controllers\Dashboard;
 use App\Contracts\Interfaces\ArticleInterface;
 use App\Contracts\Interfaces\CategoryInterface;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Article\StoreRequest;
+use App\Http\Requests\Article\UpdateRequest;
+use App\Models\Article;
+use App\Services\ArticleService;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -13,11 +18,13 @@ class ArticleController extends Controller
 {
     private ArticleInterface $article;
     private CategoryInterface $category;
+    private ArticleService $service;
 
-    public function __construct(ArticleInterface $article, CategoryInterface $category)
+    public function __construct(ArticleInterface $article, CategoryInterface $category, ArticleService $service)
     {
         $this->article = $article;
         $this->category = $category;
+        $this->service = $service;
     }
 
     /**
@@ -45,41 +52,56 @@ class ArticleController extends Controller
 
     /**
      * Store a newly created resource in storage.
+     *
+     * @param StoreRequest $request
+     * @return RedirectResponse
      */
-    public function store(Request $request)
+    public function store(StoreRequest $request): RedirectResponse
     {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
+        $this->article->store($this->service->store($request));
+        return to_route('articles.index')->with('success', trans('alert.add_success'));
     }
 
     /**
      * Show the form for editing the specified resource.
+     *
+     * @param Article $article
+     * @return View
      */
-    public function edit(string $id)
+    public function edit(Article $article): View
     {
-        //
+        $categories = $this->category->get();
+        return view('dashboard.pages.articles.edit', compact('article', 'categories'));
     }
 
     /**
      * Update the specified resource in storage.
+     *
+     * @param UpdateRequest $request
+     * @param Article $article
+     * @return RedirectResponse
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateRequest $request, Article $article): RedirectResponse
     {
-        //
+        $this->article->update($article->id, $this->service->update($article, $request));
+
+        return to_route('articles.index')->with('success', trans('alert.update_success'));
     }
 
     /**
      * Remove the specified resource from storage.
+     *
+     * @param Article $article
+     * @return RedirectResponse
      */
-    public function destroy(string $id)
+    public function destroy(Article $article): RedirectResponse
     {
-        //
+        $destroy = $this->article->delete($article->id);
+
+        if (!$destroy) return back()->with('errors', trans('alert.delete_constrained'));
+
+        $this->service->remove($article->thumbnail);
+
+        return back()->with('success', trans('alert.delete_success'));
     }
 }

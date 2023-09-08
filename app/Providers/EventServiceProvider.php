@@ -2,10 +2,15 @@
 
 namespace App\Providers;
 
+use App\Models\Article;
+use App\Models\Audio;
+use App\Models\Video;
+use App\Observers\ArticleObserver;
+use App\Observers\AudioObserver;
+use App\Observers\VideoObserver;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
-use Illuminate\Support\Facades\Event;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -25,7 +30,9 @@ class EventServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        Article::observe(ArticleObserver::class);
+        Audio::observe(AudioObserver::class);
+        Video::observe(VideoObserver::class);
     }
 
     /**
