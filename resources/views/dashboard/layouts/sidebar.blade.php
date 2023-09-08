@@ -35,7 +35,7 @@
             <span class="hide-menu">Layanan</span>
         </li>
         <li class="sidebar-item">
-            <a class="sidebar-link {{ request()->routeIs('videos.*') ? 'active' : '' }}"
+            <a class="sidebar-link {{ request()->routeIs('audios.*') ? 'active' : '' }}"
                href="{{ route('audios.index') }}" aria-expanded="false">
                   <span>
                     <i class="ti ti-music"></i>
@@ -79,8 +79,8 @@
             <span class="hide-menu">Berita</span>
         </li>
         <li class="sidebar-item">
-            <a class="sidebar-link {{ request()->routeIs('articles.*') ? 'active' : '' }}"
-               href="{{ route('articles.index') }}" aria-expanded="false">
+            <a class="sidebar-link"
+               href="#" aria-expanded="false">
                   <span>
                     <i class="ti ti-file-text"></i>
                   </span>
@@ -88,8 +88,8 @@
             </a>
         </li>
         <li class="sidebar-item">
-            <a class="sidebar-link {{ request()->routeIs('articles.*') ? 'active' : '' }}"
-               href="{{ route('articles.index') }}" aria-expanded="false">
+            <a class="sidebar-link"
+               href="#" aria-expanded="false">
                   <span>
                     <i class="ti ti-file-text"></i>
                   </span>

@@ -9,7 +9,7 @@
             <div class="card-body px-4 py-3">
                 <div class="row align-items-center">
                     <div class="col-9">
-                        <h4 class="fw-semibold mb-8 text-white">Master Artikel</h4>
+                        <h4 class="fw-semibold mb-8 text-white">Master Audio</h4>
                     </div>
                 </div>
             </div>
@@ -17,22 +17,9 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-body">
-                    <form method="POST" action="{{ route('articles.store') }}" enctype="multipart/form-data">
+                    <form method="POST" action="{{ route('audios.store') }}" enctype="multipart/form-data">
                         @csrf
                         <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-floating mb-3">
-                                    <input value="{{ old('title') }}" autocomplete="off" name="title" type="text"
-                                           class="form-control @error('title') is-invalid @enderror" id="tb-fname"
-                                           placeholder="Enter Name here">
-                                    <label for="tb-fname">Judul</label>
-                                    @error('title')
-                                    <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                    @enderror
-                                </div>
-                            </div>
                             <div class="col-md-12">
                                 <div class="form-floating mb-3">
                                     <input value="{{ old('date') }}" autocomplete="off" name="date" type="date"
@@ -47,54 +34,11 @@
                             </div>
                             <div class="col-md-12">
                                 <div class="form-floating mb-3">
-                                    <select name="category_id"
-                                            class="form-control @error('category_id') is-invalid @enderror select2-ajax">
-                                        <option>--Pilih Kategori Artikel--</option>
-                                        @foreach($categories as $category)
-                                            <option
-                                                {{ old('category_id') == $category->id ? 'selected' : '' }} value="{{ $category->id }}">
-                                                {{ $category->name }}
-                                            </option>
-                                        @endforeach
-                                    </select>
-                                    @error('category_id')
-                                    <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                    @enderror
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-floating mb-3">
-                                    <select name="status" class="form-control">
-                                        <option
-                                            {{ old('status') == ArticleStatusEnum::ACTIVE->value ? 'selected' : '' }} value="1">
-                                            Publish
-                                        </option>
-                                        <option
-                                            {{ old('status') == ArticleStatusEnum::DRAFT->value ? 'selected' : '' }} value="0">
-                                            Draft
-                                        </option>
-                                    </select>
-                                    <label for="tb-cpwd">Status Artikel</label>
-                                    @error('status')
-                                    <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-floating mb-4">
-                                    <label for="tb-cpwd">Thumbnail</label>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="form-floating mt-3 mb-3">
-                                    <input name="thumbnail" type="file"
-                                           class="form-control @error('thumbnail') is-invalid @enderror" id="tb-cpwd"
-                                           placeholder="Password">
-                                    @error('thumbnail')
+                                    <input value="{{ old('title') }}" autocomplete="off" name="title" type="text"
+                                           class="form-control @error('title') is-invalid @enderror" id="tb-fname"
+                                           placeholder="Enter Name here">
+                                    <label for="tb-fname">Judul Audio</label>
+                                    @error('title')
                                     <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
                                                 </span>
@@ -104,7 +48,7 @@
 
                             <div class="col-md-12">
                                 <div class="form-floating mb-4">
-                                    <label for="tb-cpwd">Konten Artikel</label>
+                                    <label for="tb-cpwd">Deskripsi Audio</label>
                                 </div>
                             </div>
 
@@ -115,6 +59,21 @@
                                               class="form-control @error('content') is-invalid @enderror">{{ old('content') }}</textarea>
                                     @error('content')
                                     <span class="invalid-feedback" role="alert"><strong>{{ $message }}</strong></span>
+                                    @enderror
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-12">
+                                <div class="form-floating mb-3">
+                                    <input value="{{ old('link') }}" autocomplete="off" name="link" type="text"
+                                           class="form-control @error('link') is-invalid @enderror" id="tb-fname"
+                                           placeholder="Enter Name here">
+                                    <label for="tb-fname">Link Audio</label>
+                                    @error('link')
+                                    <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
                                     @enderror
                                 </div>
                             </div>

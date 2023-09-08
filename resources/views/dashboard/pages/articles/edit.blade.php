@@ -110,6 +110,12 @@
                             </div>
 
                             <div class="col-md-12">
+                                <div class="form-floating mb-4">
+                                    <label for="tb-cpwd">Konten Artikel</label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
                                 <div class="form-floating mt-3 mb-3">
                                     <textarea id="content" rows="10" data-sample="3"
                                               data-sample-short name="content"
