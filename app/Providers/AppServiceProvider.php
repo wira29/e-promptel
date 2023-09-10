@@ -7,13 +7,16 @@ use App\Contracts\Interfaces\ArticleInterface;
 use App\Contracts\Interfaces\AudioInterface;
 use App\Contracts\Interfaces\CategoryInterface;
 use App\Contracts\Interfaces\VideoInterface;
+use App\Contracts\Interfaces\VideoLandingInterface;
 use App\Contracts\Interfaces\VisionMissionInterface;
 use App\Contracts\Repositories\AboutRepository;
 use App\Contracts\Repositories\ArticleRepository;
 use App\Contracts\Repositories\AudioRepository;
 use App\Contracts\Repositories\CategoryRepository;
+use App\Contracts\Repositories\VideoLandingRepository;
 use App\Contracts\Repositories\VideoRepository;
 use App\Contracts\Repositories\VisionMissionRepository;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -24,7 +27,8 @@ class AppServiceProvider extends ServiceProvider
         AboutInterface::class => AboutRepository::class,
         VisionMissionInterface::class => VisionMissionRepository::class,
         AudioInterface::class => AudioRepository::class,
-        VideoInterface::class => VideoRepository::class
+        VideoInterface::class => VideoRepository::class,
+        VideoLandingInterface::class => VideoLandingRepository::class
     ];
 
     /**
@@ -40,6 +44,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        Paginator::defaultView('vendor.pagination.custom-pagination');
     }
 }

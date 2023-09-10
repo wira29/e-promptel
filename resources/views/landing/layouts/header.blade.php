@@ -32,30 +32,62 @@
                 <nav>
                     <!--Desktop menu-->
                     <ul class="main-menu d-none d-lg-inline font-small">
-                        <li>
+                        <li class="menu-item-has-children">
                             <a
-                                class="{{ request()->routeIs('home') ? 'active' : '' }}"
-                                href="{{ route('home') }}"
-                                >Beranda</a
+                                class="{{ request()->routeIs('home') || request()->routeIs('agenda') ? 'active' : '' }}"
+                                href="index-2.html"
                             >
-                        </li>
-                        <li>
-                            <a
-                                class="{{ request()->routeIs('news') ? 'active' : '' }}"
-                                href="{{ route('news') }}"
-                                >Berita</a
+                                Beranda</a
                             >
+                            <ul class="sub-menu text-muted font-small">
+                                <li>
+                                    <a href="{{ route('home') }}">Beranda</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('activities') }}"
+                                        >Tentang</a
+                                    >
+                                </li>
+                                <li>
+                                    <a href="{{ route('activities') }}"
+                                        >Visi Misi</a
+                                    >
+                                </li>
+                                <li>
+                                    <a href="{{ route('activities') }}"
+                                        >Struktur Organisasi</a
+                                    >
+                                </li>
+                            </ul>
                         </li>
                         <li class="menu-item-has-children">
                             <a
-                                class="{{ request()->routeIs('videos') || request()->routeIs('audios') || request()->routeIs('articles') ? 'active' : '' }}"
+                                class="{{ request()->routeIs('activities') || request()->routeIs('agenda') ? 'active' : '' }}"
+                                href="index-2.html"
+                            >
+                                Berita</a
+                            >
+                            <ul class="sub-menu text-muted font-small">
+                                <li>
+                                    <a href="{{ route('agenda') }}">Agenda</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('activities') }}"
+                                        >Kegiatan</a
+                                    >
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="menu-item-has-children">
+                            <a
+                                class="{{ request()->routeIs('landing.videos') || request()->routeIs('audios') || request()->routeIs('articles') ? 'active' : '' }}"
                                 href="index-2.html"
                             >
                                 Layanan</a
                             >
                             <ul class="sub-menu text-muted font-small">
                                 <li>
-                                    <a href="{{ route('videos') }}"
+                                    <a href="{{ route('landing.videos') }}"
                                         >Materi Video</a
                                     >
                                 </li>
@@ -71,7 +103,13 @@
                                 </li>
                             </ul>
                         </li>
-                        <li><a href="category.html">Poling</a></li>
+                        <li>
+                            <a
+                                class="{{ request()->routeIs('polling') ? 'active' : '' }}"
+                                href="{{ route('polling') }}"
+                                >Polling</a
+                            >
+                        </li>
                         <li>
                             <a
                                 class="{{ request()->routeIs('contact') ? 'active' : '' }}"

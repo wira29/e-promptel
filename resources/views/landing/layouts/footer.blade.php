@@ -61,7 +61,7 @@
                     data-wow-delay="0.1s"
                 >
                     <div class="widget-header-2 position-relative mb-30">
-                        <h5 class="mt-5 mb-30">Quick link</h5>
+                        <h5 class="mt-5 mb-30">Menu</h5>
                     </div>
                     <ul class="font-small">
                         <li class="cat-item cat-item-2">
@@ -91,7 +91,7 @@
                     data-wow-delay="0.3s"
                 >
                     <div class="widget-header-2 position-relative mb-30">
-                        <h5 class="mt-5 mb-30">Newsletter</h5>
+                        <h5 class="mt-5 mb-30">Sosial Media</h5>
                     </div>
                     <div class="newsletter">
                         <p class="font-medium">

@@ -9,6 +9,7 @@ use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Dashboard\ProfileController;
 use App\Http\Controllers\Dashboard\VideoController;
 use App\Http\Controllers\Dashboard\VisionMissionController;
+use App\Http\Controllers\VideoLandingController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -23,32 +24,46 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::name('landing.')->group(function(){
+    Route::get('/videos', [VideoLandingController::class, 'index'])->name('videos');
+    Route::get('/videos/{slug}', [VideoLandingController::class, 'show'])->name('detail-videos');
+});
+
 Route::get('/', function () {
-    return view('landing.index');
+    return view('landing.pages.home.index');
 })->name('home');
-Route::get('/news', function () {
-    return view('landing.news');
-})->name('news');
+Route::get('/agenda', function () {
+    return view('landing.pages.agenda.agenda');
+})->name('agenda');
+Route::get('/activities', function () {
+    return view('landing.pages.activity.activity');
+})->name('activities');
 Route::get('/news/{id}', function () {
-    return view('landing.detail_news');
+    return view('landing.pages.news.detail_news');
 })->name('detail-news');
-Route::get('/videos', function () {
-    return view('landing.videos');
-})->name('videos');
-Route::get('/videos/{id}', function () {
-    return view('landing.detail_video');
-})->name('detail-videos');
+//Route::get('/videos', function () {
+//    return view('landing.pages.videos.videos');
+//})->name('videos');
+//Route::get('/videos/{id}', function () {
+//    return view('landing.pages.videos.detail_video');
+//})->name('detail-videos');
 Route::get('/audios', function () {
-    return view('landing.audios');
+    return view('landing.pages.audios.audios');
 })->name('audios');
 Route::get('/audios/{id}', function () {
-    return view('landing.detail_audio');
+    return view('landing.pages.audios.detail_audio');
 })->name('detail-audio');
 Route::get('/articles', function () {
-    return view('landing.articles');
+    return view('landing.pages.articles.articles');
 })->name('articles');
+Route::get('/polling', function () {
+    return view('landing.pages.polling.polling');
+})->name('polling');
+Route::get('/polling/form/{id}', function () {
+    return view('landing.pages.polling.polling_form');
+})->name('polling-form');
 Route::get('/contact', function () {
-    return view('landing.contact');
+    return view('landing.pages.contact.contact');
 })->name('contact');
 
 Auth::routes();

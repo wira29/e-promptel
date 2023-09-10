@@ -20,6 +20,8 @@
             rel="stylesheet"
             href="{{ asset('assets/css/responsive.css') }}"
         />
+
+        @yield('css')
     </head>
 
     <body class="theme-mode">
@@ -219,6 +221,25 @@
             }}"></script>
         <!-- NewsBoard JS -->
         <script src="{{ asset('assets/js/main.js') }}"></script>
+
+        <!--Start of Tawk.to Script-->
+        <script type="text/javascript">
+            var Tawk_API = Tawk_API || {},
+                Tawk_LoadStart = new Date();
+            (function () {
+                var s1 = document.createElement("script"),
+                    s0 = document.getElementsByTagName("script")[0];
+                s1.async = true;
+                s1.src =
+                    "https://embed.tawk.to/64fc14f9a91e863a5c1283fd/1h9sb3s66";
+                s1.charset = "UTF-8";
+                s1.setAttribute("crossorigin", "*");
+                s0.parentNode.insertBefore(s1, s0);
+            })();
+        </script>
+
+        @yield('script')
+        <!--End of Tawk.to Script-->
     </body>
 
     <!-- Mirrored from demos.alithemes.com/html/stories/demo/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 03 Sep 2023 04:02:46 GMT -->
