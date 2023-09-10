@@ -80,7 +80,7 @@
                         </li>
                         <li class="menu-item-has-children">
                             <a
-                                class="{{ request()->routeIs('landing.videos') || request()->routeIs('audios') || request()->routeIs('articles') ? 'active' : '' }}"
+                                class="{{ request()->routeIs('landing.videos') || request()->routeIs('landing.audios') || request()->routeIs('articles') ? 'active' : '' }}"
                                 href="index-2.html"
                             >
                                 Layanan</a
@@ -92,7 +92,7 @@
                                     >
                                 </li>
                                 <li>
-                                    <a href="{{ route('audios') }}"
+                                    <a href="{{ route('landing.audios') }}"
                                         >Materi Audio</a
                                     >
                                 </li>
