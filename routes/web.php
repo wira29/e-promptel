@@ -38,6 +38,7 @@ Route::name('landing.')->group(function () {
     Route::get('/about', [HomeLandingController::class, 'about'])->name('about');
     Route::get('/', [HomeLandingController::class, 'index'])->name('home');
     Route::get('/vision-mission', [HomeLandingController::class, 'visionMission'])->name('vision-mission');
+    Route::get('/organization', [HomeLandingController::class, 'organization'])->name('organization');
 });
 
 Route::get('/agenda', function () {

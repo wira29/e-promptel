@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Contracts\Interfaces\AboutLandingInterface;
+use App\Contracts\Interfaces\OrganizationLandingInterface;
 use App\Contracts\Interfaces\VisionMissionLandingInterface;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -11,10 +12,12 @@ class HomeLandingController extends Controller
 {
     private AboutLandingInterface $about;
     private VisionMissionLandingInterface $visionMission;
-    public function __construct(AboutLandingInterface $about, VisionMissionLandingInterface $visionMission)
+    private OrganizationLandingInterface $organization;
+    public function __construct(AboutLandingInterface $about, VisionMissionLandingInterface $visionMission, OrganizationLandingInterface $organization)
     {
         $this->about = $about;
         $this->visionMission = $visionMission;
+        $this->organization = $organization;
     }
 
     /**
@@ -51,5 +54,18 @@ class HomeLandingController extends Controller
             "visionMission" => $this->visionMission->get(),
         ];
         return view('landing.pages.home.vision_mission', $data);
+    }
+
+    /**
+     * display organization view
+     *
+     * @return View
+     */
+    public function organization(): View
+    {
+        $data = [
+            "organization" => $this->organization->get(),
+        ];
+        return view('landing.pages.home.organization', $data);
     }
 }
