@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AudioLandingController;
 use App\Http\Controllers\Dashboard\AboutController;
 use App\Http\Controllers\Dashboard\ArticleController;
 use App\Http\Controllers\Dashboard\AudioController;
@@ -28,6 +29,8 @@ use Illuminate\Support\Facades\Route;
 Route::name('landing.')->group(function () {
     Route::get('/videos', [VideoLandingController::class, 'index'])->name('videos');
     Route::get('/videos/{slug}', [VideoLandingController::class, 'show'])->name('detail-videos');
+    Route::get('/audios', [AudioLandingController::class, 'index'])->name('audios');
+    Route::get('/audios/{slug}', [AudioLandingController::class, 'show'])->name('detail-audio');
 });
 
 Route::get('/', function () {
@@ -48,12 +51,12 @@ Route::get('/news/{id}', function () {
 //Route::get('/videos/{id}', function () {
 //    return view('landing.pages.videos.detail_video');
 //})->name('detail-videos');
-Route::get('/audios', function () {
-    return view('landing.pages.audios.audios');
-})->name('audios');
-Route::get('/audios/{id}', function () {
-    return view('landing.pages.audios.detail_audio');
-})->name('detail-audio');
+//Route::get('/audios', function () {
+//    return view('landing.pages.audios.audios');
+//})->name('audios');
+//Route::get('/audios/{id}', function () {
+//    return view('landing.pages.audios.detail_audio');
+//})->name('detail-audio');
 Route::get('/articles', function () {
     return view('landing.pages.articles.articles');
 })->name('articles');
