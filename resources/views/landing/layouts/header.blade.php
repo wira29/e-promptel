@@ -34,17 +34,17 @@
                     <ul class="main-menu d-none d-lg-inline font-small">
                         <li class="menu-item-has-children">
                             <a
-                                class="{{ request()->routeIs('home') || request()->routeIs('agenda') ? 'active' : '' }}"
+                                class="{{ request()->routeIs('landing.home') || request()->routeIs('landing.about') ? 'active' : '' }}"
                                 href="index-2.html"
                             >
                                 Beranda</a
                             >
                             <ul class="sub-menu text-muted font-small">
                                 <li>
-                                    <a href="{{ route('home') }}">Beranda</a>
+                                    <a href="{{ route('landing.home') }}">Beranda</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('activities') }}"
+                                    <a href="{{ route('landing.about') }}"
                                         >Tentang</a
                                     >
                                 </li>
@@ -80,7 +80,7 @@
                         </li>
                         <li class="menu-item-has-children">
                             <a
-                                class="{{ request()->routeIs('landing.videos') || request()->routeIs('landing.audios') || request()->routeIs('articles') ? 'active' : '' }}"
+                                class="{{ request()->routeIs('landing.videos') || request()->routeIs('landing.audios') || request()->routeIs('landing.articles') ? 'active' : '' }}"
                                 href="index-2.html"
                             >
                                 Layanan</a

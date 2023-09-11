@@ -12,6 +12,7 @@ use App\Http\Controllers\Dashboard\OrganizationController;
 use App\Http\Controllers\Dashboard\ProfileController;
 use App\Http\Controllers\Dashboard\VideoController;
 use App\Http\Controllers\Dashboard\VisionMissionController;
+use App\Http\Controllers\HomeLandingController;
 use App\Http\Controllers\VideoLandingController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -33,11 +34,11 @@ Route::name('landing.')->group(function () {
     Route::get('/audios', [AudioLandingController::class, 'index'])->name('audios');
     Route::get('/audios/{slug}', [AudioLandingController::class, 'show'])->name('detail-audio');
     Route::get('/articles', [ArticleLandingController::class, 'index'])->name('articles');
+    Route::get('/articles/{slug}', [ArticleLandingController::class, 'show'])->name('detail-article');
+    Route::get('/about', [HomeLandingController::class, 'about'])->name('about');
+    Route::get('/', [HomeLandingController::class, 'index'])->name('home');
 });
 
-Route::get('/', function () {
-    return view('landing.pages.home.index');
-})->name('home');
 Route::get('/agenda', function () {
     return view('landing.pages.agenda.agenda');
 })->name('agenda');

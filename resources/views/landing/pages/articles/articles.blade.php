@@ -34,7 +34,7 @@
                                                     <a
                                                         class="img-link"
                                                         href="{{
-                                                        route('detail-news', 1)
+                                                        route('landing.detail-article', $article->slug)
                                                     }}"
                                                     ></a>
                                                 </div>
@@ -99,7 +99,7 @@
                                                 >
                                                     <a
                                                         href="{{
-                                                        route('detail-news', 1)
+                                                        route('landing.detail-article', $article->slug)
                                                     }}"
                                                     >{{ $article->title }}</a
                                                     >
@@ -142,7 +142,7 @@
                                                 >
                                                     <a
                                                         href="{{
-                                                        route('detail-news', 1)
+                                                        route('landing.detail-article', $article->slug)
                                                     }}"
                                                     >{{ $latest->title }}</a
                                                     >
@@ -161,7 +161,7 @@
                                                 <a
                                                     class="color-white"
                                                     href="{{
-                                                    route('detail-news', 1)
+                                                    route('landing.detail-article', $article->slug)
                                                 }}"
                                                 >
                                                     <img
