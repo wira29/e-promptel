@@ -6,6 +6,7 @@ use App\Http\Controllers\Dashboard\AudioController;
 use App\Http\Controllers\Dashboard\CategoryController;
 use App\Http\Controllers\Dashboard\ChangePasswordController;
 use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\Dashboard\OrganizationController;
 use App\Http\Controllers\Dashboard\ProfileController;
 use App\Http\Controllers\Dashboard\VideoController;
 use App\Http\Controllers\Dashboard\VisionMissionController;
@@ -24,7 +25,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::name('landing.')->group(function(){
+Route::name('landing.')->group(function () {
     Route::get('/videos', [VideoLandingController::class, 'index'])->name('videos');
     Route::get('/videos/{slug}', [VideoLandingController::class, 'show'])->name('detail-videos');
 });
@@ -82,7 +83,8 @@ Route::middleware('auth')->prefix('dashboard')->group(function () {
 
     Route::resources([
         'about' => AboutController::class,
-        'vision-mission' => VisionMissionController::class
+        'vision-mission' => VisionMissionController::class,
+        'organization' => OrganizationController::class
     ], ['only' => ['index', 'update']]);
 
     Route::name('user.')->group(function () {
