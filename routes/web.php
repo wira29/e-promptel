@@ -37,6 +37,7 @@ Route::name('landing.')->group(function () {
     Route::get('/articles/{slug}', [ArticleLandingController::class, 'show'])->name('detail-article');
     Route::get('/about', [HomeLandingController::class, 'about'])->name('about');
     Route::get('/', [HomeLandingController::class, 'index'])->name('home');
+    Route::get('/vision-mission', [HomeLandingController::class, 'visionMission'])->name('vision-mission');
 });
 
 Route::get('/agenda', function () {

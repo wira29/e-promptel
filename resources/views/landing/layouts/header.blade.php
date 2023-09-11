@@ -34,7 +34,7 @@
                     <ul class="main-menu d-none d-lg-inline font-small">
                         <li class="menu-item-has-children">
                             <a
-                                class="{{ request()->routeIs('landing.home') || request()->routeIs('landing.about') ? 'active' : '' }}"
+                                class="{{ request()->routeIs('landing.home') || request()->routeIs('landing.about') || request()->routeIs('landing.vision-mission') ? 'active' : '' }}"
                                 href="index-2.html"
                             >
                                 Beranda</a
@@ -49,7 +49,7 @@
                                     >
                                 </li>
                                 <li>
-                                    <a href="{{ route('activities') }}"
+                                    <a href="{{ route('landing.vision-mission') }}"
                                         >Visi Misi</a
                                     >
                                 </li>
