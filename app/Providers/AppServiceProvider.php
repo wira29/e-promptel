@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Contracts\Interfaces\AboutInterface;
 use App\Contracts\Interfaces\ArticleInterface;
+use App\Contracts\Interfaces\ArticleLandingInterface;
 use App\Contracts\Interfaces\AudioInterface;
 use App\Contracts\Interfaces\AudioLandingInterface;
 use App\Contracts\Interfaces\CategoryInterface;
@@ -11,6 +12,7 @@ use App\Contracts\Interfaces\VideoInterface;
 use App\Contracts\Interfaces\VideoLandingInterface;
 use App\Contracts\Interfaces\VisionMissionInterface;
 use App\Contracts\Repositories\AboutRepository;
+use App\Contracts\Repositories\ArticleLandingRepository;
 use App\Contracts\Repositories\ArticleRepository;
 use App\Contracts\Repositories\AudioLandingRepository;
 use App\Contracts\Repositories\AudioRepository;
@@ -32,6 +34,7 @@ class AppServiceProvider extends ServiceProvider
         VideoInterface::class => VideoRepository::class,
         VideoLandingInterface::class => VideoLandingRepository::class,
         AudioLandingInterface::class => AudioLandingRepository::class,
+        ArticleLandingInterface::class => ArticleLandingRepository::class,
     ];
 
     /**

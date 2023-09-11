@@ -97,7 +97,7 @@
                                     >
                                 </li>
                                 <li>
-                                    <a href="{{ route('articles') }}"
+                                    <a href="{{ route('landing.articles') }}"
                                         >Artikel</a
                                     >
                                 </li>

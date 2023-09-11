@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArticleLandingController;
 use App\Http\Controllers\AudioLandingController;
 use App\Http\Controllers\Dashboard\AboutController;
 use App\Http\Controllers\Dashboard\ArticleController;
@@ -30,6 +31,7 @@ Route::name('landing.')->group(function(){
     Route::get('/videos/{slug}', [VideoLandingController::class, 'show'])->name('detail-videos');
     Route::get('/audios', [AudioLandingController::class, 'index'])->name('audios');
     Route::get('/audios/{slug}', [AudioLandingController::class, 'show'])->name('detail-audio');
+    Route::get('/articles', [ArticleLandingController::class, 'index'])->name('articles');
 });
 
 Route::get('/', function () {
@@ -56,9 +58,9 @@ Route::get('/news/{id}', function () {
 //Route::get('/audios/{id}', function () {
 //    return view('landing.pages.audios.detail_audio');
 //})->name('detail-audio');
-Route::get('/articles', function () {
-    return view('landing.pages.articles.articles');
-})->name('articles');
+//Route::get('/articles', function () {
+//    return view('landing.pages.articles.articles');
+//})->name('articles');
 Route::get('/polling', function () {
     return view('landing.pages.polling.polling');
 })->name('polling');
