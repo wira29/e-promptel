@@ -3,7 +3,7 @@
     <div class="container">
         <h2 class="font-weight-900">Video</h2>
         <div class="breadcrumb">
-            <a href="index-2.html" rel="nofollow">Beranda</a>
+            <a href="{{ route('landing.home') }}" rel="nofollow">Beranda</a>
             <span></span> Video
         </div>
         <div class="bt-1 border-color-1 mt-30 mb-50"></div>
@@ -37,53 +37,6 @@
                                                     route('landing.detail-videos', $video->slug)
                                                 }}"
                                                 ></a>
-                                                <span class="top-right-icon bg-info"
-                                                ><i
-                                                        class="elegant-icon icon_headphones"
-                                                    ></i
-                                                    ></span>
-                                                <ul class="social-share">
-                                                    <li>
-                                                        <a href="#"
-                                                        ><i
-                                                                class="elegant-icon social_share"
-                                                            ></i
-                                                            ></a>
-                                                    </li>
-                                                    <li>
-                                                        <a
-                                                            class="fb"
-                                                            href="#"
-                                                            title="Share on Facebook"
-                                                            target="_blank"
-                                                        ><i
-                                                                class="elegant-icon social_facebook"
-                                                            ></i
-                                                            ></a>
-                                                    </li>
-                                                    <li>
-                                                        <a
-                                                            class="tw"
-                                                            href="#"
-                                                            target="_blank"
-                                                            title="Tweet now"
-                                                        ><i
-                                                                class="elegant-icon social_twitter"
-                                                            ></i
-                                                            ></a>
-                                                    </li>
-                                                    <li>
-                                                        <a
-                                                            class="pt"
-                                                            href="#"
-                                                            target="_blank"
-                                                            title="Pin it"
-                                                        ><i
-                                                                class="elegant-icon social_pinterest"
-                                                            ></i
-                                                            ></a>
-                                                    </li>
-                                                </ul>
                                             </div>
                                             <div class="post-content p-30">
                                                 <div

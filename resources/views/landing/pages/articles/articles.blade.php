@@ -3,7 +3,7 @@
     <div class="container">
         <h2 class="font-weight-900">Artikel</h2>
         <div class="breadcrumb">
-            <a href="index-2.html" rel="nofollow">Beranda</a>
+            <a href="{{ route('landing.home') }}" rel="nofollow">Beranda</a>
             <span></span> Artikel
         </div>
         <div class="bt-1 border-color-1 mt-30 mb-50"></div>
@@ -28,7 +28,7 @@
                                                 <div
                                                     class="img-hover-slide border-radius-5 position-relative"
                                                     style="
-                                                    background-image: url(assets/imgs/news/news-13.jpg);
+                                                    background-image: url('{{ asset('storage/' . $article->thumbnail ) }}');
                                                 "
                                                 >
                                                     <a
@@ -38,48 +38,6 @@
                                                     }}"
                                                     ></a>
                                                 </div>
-                                                <ul class="social-share">
-                                                    <li>
-                                                        <a href="#"
-                                                        ><i
-                                                                class="elegant-icon social_share"
-                                                            ></i
-                                                            ></a>
-                                                    </li>
-                                                    <li>
-                                                        <a
-                                                            class="fb"
-                                                            href="#"
-                                                            title="Share on Facebook"
-                                                            target="_blank"
-                                                        ><i
-                                                                class="elegant-icon social_facebook"
-                                                            ></i
-                                                            ></a>
-                                                    </li>
-                                                    <li>
-                                                        <a
-                                                            class="tw"
-                                                            href="#"
-                                                            target="_blank"
-                                                            title="Tweet now"
-                                                        ><i
-                                                                class="elegant-icon social_twitter"
-                                                            ></i
-                                                            ></a>
-                                                    </li>
-                                                    <li>
-                                                        <a
-                                                            class="pt"
-                                                            href="#"
-                                                            target="_blank"
-                                                            title="Pin it"
-                                                        ><i
-                                                                class="elegant-icon social_pinterest"
-                                                            ></i
-                                                            ></a>
-                                                    </li>
-                                                </ul>
                                             </div>
                                         </div>
                                         <div class="col-md-8 align-self-center">
@@ -165,7 +123,7 @@
                                                 }}"
                                                 >
                                                     <img
-                                                        src="assets/imgs/news/thumb-6.jpg"
+                                                        src="{{ asset('storage/' . $article->thumbnail ) }}"
                                                         alt=""
                                                     />
                                                 </a>

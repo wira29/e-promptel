@@ -39,6 +39,15 @@ Route::name('landing.')->group(function () {
     Route::get('/', [HomeLandingController::class, 'index'])->name('home');
     Route::get('/vision-mission', [HomeLandingController::class, 'visionMission'])->name('vision-mission');
     Route::get('/organization', [HomeLandingController::class, 'organization'])->name('organization');
+    Route::get('/polling', function () {
+        return view('landing.pages.polling.polling');
+    })->name('polling');
+    Route::get('/polling/form/{id}', function () {
+        return view('landing.pages.polling.polling_form');
+    })->name('polling-form');
+    Route::get('/contact', function () {
+        return view('landing.pages.contact.contact');
+    })->name('contact');
 });
 
 Route::get('/agenda', function () {
@@ -65,15 +74,7 @@ Route::get('/news/{id}', function () {
 //Route::get('/articles', function () {
 //    return view('landing.pages.articles.articles');
 //})->name('articles');
-Route::get('/polling', function () {
-    return view('landing.pages.polling.polling');
-})->name('polling');
-Route::get('/polling/form/{id}', function () {
-    return view('landing.pages.polling.polling_form');
-})->name('polling-form');
-Route::get('/contact', function () {
-    return view('landing.pages.contact.contact');
-})->name('contact');
+
 
 Auth::routes();
 

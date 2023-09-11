@@ -3,13 +3,13 @@
         <div class="container">
             <div class="row pt-20 pb-20">
                 <div class="col-md-3 col-xs-6">
-                    <a href="index-2.html">
-                        <!-- <img
+                    <a href="{{ route('landing.home') }}">
+                        <img
                             class="logo"
-                            src="assets/imgs/theme/logo.png"
+                            src="{{ asset('logo.png') }}"
                             alt=""
-                    /> -->
-                        E-Promptel
+                            width="80"
+                    />
                     </a>
                 </div>
                 <div class="col-md-9 col-xs-6 text-end header-top-right">
@@ -105,15 +105,15 @@
                         </li>
                         <li>
                             <a
-                                class="{{ request()->routeIs('polling') ? 'active' : '' }}"
-                                href="{{ route('polling') }}"
+                                class="{{ request()->routeIs('landing.polling') ? 'active' : '' }}"
+                                href="{{ route('landing.polling') }}"
                                 >Polling</a
                             >
                         </li>
                         <li>
                             <a
                                 class="{{ request()->routeIs('contact') ? 'active' : '' }}"
-                                href="{{ route('contact') }}"
+                                href="{{ route('landing.contact') }}"
                                 >Kontak</a
                             >
                         </li>

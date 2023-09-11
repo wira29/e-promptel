@@ -11,11 +11,6 @@
                             Start writing, no matter what. The water does not
                             flow until the faucet is turned on.
                         </p>
-                        <p>
-                            <strong class="color-black">Address</strong><br />
-                            123 Main Street<br />
-                            New York, NY 10001
-                        </p>
                     </div>
                 </div>
             </div>
@@ -29,19 +24,19 @@
                     </div>
                     <ul class="font-small">
                         <li class="cat-item cat-item-2">
-                            <a href="#">Beranda</a>
+                            <a href="{{ route('landing.home') }}">Beranda</a>
                         </li>
                         <li class="cat-item cat-item-4">
-                            <a href="#">Materi Video</a>
+                            <a href="{{ route('landing.videos') }}">Materi Video</a>
                         </li>
                         <li class="cat-item cat-item-5">
-                            <a href="#">Materi Audio</a>
+                            <a href="{{ route('landing.audios') }}">Materi Audio</a>
                         </li>
                         <li class="cat-item cat-item-6">
-                            <a href="#">Polling</a>
+                            <a href="{{ route('landing.polling') }}">Polling</a>
                         </li>
                         <li class="cat-item cat-item-7">
-                            <a href="#">Contact</a>
+                            <a href="{{ route('landing.contact') }}">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -94,12 +89,10 @@
         </div>
         <div class="footer-copy-right pt-30 mt-20 wow fadeInUp animated">
             <p class="float-md-start font-small text-muted">
-                © 2023, Stories - Personal Blog HTML Template
+                © 2023, E-Promptel
             </p>
             <p class="float-md-end font-small text-muted">
-                Design by
-                <a href="https://alithemes.com/" target="_blank">AliThemes</a>
-                | All rights reserved
+                Politeknik Negeri Jember | POLIJE
             </p>
         </div>
     </div>

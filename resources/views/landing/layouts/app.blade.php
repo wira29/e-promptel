@@ -4,7 +4,7 @@
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="x-ua-compatible" content="ie=edge" />
-        <title>Stories - Personal Blog HTML Template</title>
+        <title>E-Promptel</title>
         <meta name="description" content="" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link
@@ -28,7 +28,9 @@
         <div class="scroll-progress primary-bg"></div>
         <!-- Start Preloader -->
         <div class="preloader text-center">
-            <div class="circle"></div>
+                <img src="{{ asset("logo.png") }}" width="80" alt="logo" />
+{{--            <div class="circle">--}}
+{{--            </div>--}}
         </div>
         <!-- Start Header -->
         @include('landing.layouts.header')
