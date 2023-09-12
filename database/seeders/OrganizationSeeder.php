@@ -2,7 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Enums\UploadDiskEnum;
+use App\Helpers\UploadHelper;
+use App\Models\Organization;
 use Illuminate\Database\Seeder;
 
 class OrganizationSeeder extends Seeder
@@ -12,6 +14,11 @@ class OrganizationSeeder extends Seeder
      */
     public function run(): void
     {
-        //
+        $upload = new UploadHelper();
+
+        Organization::query()->create([
+            'photo' => str_replace("\\", "/", $upload->move(public_path('struktur-organisasi.jpg'), UploadDiskEnum::ORGANIZATIONS->value)),
+            'description' => '<p>Test Deskripsi Organisasi</p>'
+        ]);
     }
 }

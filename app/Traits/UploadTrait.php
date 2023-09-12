@@ -39,7 +39,7 @@ trait UploadTrait
 
     public function upload(string $disk, UploadedFile $file, bool $originalName = false): string
     {
-        if (!$this->exist($disk)) Storage::makeDirectory($disk);
+        $this->makeDirectory($disk);
 
         if ($originalName) {
             return $file->storeAs($disk, $file->getClientOriginalName());
@@ -47,4 +47,16 @@ trait UploadTrait
 
         return Storage::put($disk, $file);
     }
+
+    /**
+     * Handle Make Directory if the folder doesn't exist
+     * @param string $disk
+     * @return void
+     */
+
+    public function makeDirectory(string $disk): void
+    {
+        if (!$this->exist($disk)) Storage::makeDirectory($disk);
+    }
+
 }

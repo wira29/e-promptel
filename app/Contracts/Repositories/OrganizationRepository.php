@@ -19,7 +19,8 @@ class OrganizationRepository extends BaseRepository implements OrganizationInter
      */
     public function get(): mixed
     {
-        // TODO: Implement get() method.
+        return $this->model->query()
+            ->firstOrFail();
     }
 
     /**
@@ -32,6 +33,8 @@ class OrganizationRepository extends BaseRepository implements OrganizationInter
      */
     public function update(mixed $id, array $data): mixed
     {
-        // TODO: Implement update() method.
+        return $this->model->query()
+            ->findOrFail($id)
+            ->update($data);
     }
 }
