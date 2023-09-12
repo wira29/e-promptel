@@ -16,14 +16,14 @@
                                     background-image: url('https://i.ytimg.com/vi/{{ $video->link }}/hqdefault.jpg');
                                 "
                                 >
-                                    <a class="img-link" href="single.html"></a>
+                                    <a class="img-link" href="{{ route('detail-videos', $video->id) }}"></a>
                                     <div
                                         class="post-content-overlay text-white ml-30 mr-30 pb-30"
                                     >
                                         <div
                                             class="entry-meta meta-0 font-small mb-20"
                                         >
-                                            <a href="category.html"
+                                            <a href="#"
                                             ><span
                                                     class="post-cat text-info text-uppercase"
                                                 >Materi Video</span
@@ -33,7 +33,7 @@
                                         <h3
                                             class="post-title font-weight-900 mb-20"
                                         >
-                                            <a class="text-white" href="single.html"
+                                            <a class="text-white" href="{{ route('detail-videos', $video->id) }}"
                                             >{{ $video->title }}</a
                                             >
                                         </h3>
