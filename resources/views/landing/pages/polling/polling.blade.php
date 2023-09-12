@@ -36,9 +36,7 @@
                                                 class="post-title font-weight-900 mb-20"
                                             >
                                                 <a
-                                                    href="{{
-                                                        route('detail-news', 1)
-                                                    }}"
+                                                    href="#"
                                                     >Helpful Tips for Working
                                                     from Home as a Freelancer</a
                                                 >
@@ -89,9 +87,7 @@
                                                 class="post-title font-weight-900 mb-20"
                                             >
                                                 <a
-                                                    href="{{
-                                                        route('detail-news', 1)
-                                                    }}"
+                                                    href="#"
                                                     >Helpful Tips for Working
                                                     from Home as a Freelancer</a
                                                 >
