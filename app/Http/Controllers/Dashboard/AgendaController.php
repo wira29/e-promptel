@@ -83,7 +83,7 @@ class AgendaController extends Controller
      * @param Agenda $agenda
      * @return RedirectResponse
      */
-    public function update(UpdateRequest $request, Agenda $agenda)
+    public function update(UpdateRequest $request, Agenda $agenda): RedirectResponse
     {
         $this->agenda->update($agenda->id, $this->service->update($agenda, $request));
 
