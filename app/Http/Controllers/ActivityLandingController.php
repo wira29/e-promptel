@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Contracts\Interfaces\AgendaLandingInterface;
+use App\Contracts\Interfaces\ActivityLandingInterface;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use Jorenvh\Share\ShareFacade;
 
-class AgendaLandingController extends Controller
+class ActivityLandingController extends Controller
 {
-    private AgendaLandingInterface $agenda;
+    private ActivityLandingInterface $activity;
 
-    public function __construct(AgendaLandingInterface $agenda)
+    public function __construct(ActivityLandingInterface $activity)
     {
-        $this->agenda = $agenda;
+        $this->activity = $activity;
     }
 
     /**
@@ -24,11 +24,11 @@ class AgendaLandingController extends Controller
     public function index(): View
     {
         $data = [
-            'agendas' => $this->agenda->paginate(9),
-            'latests' => $this->agenda->getLatest(5)
+            'activities' => $this->activity->paginate(9),
+            'latests' => $this->activity->getLatest(5)
         ];
 
-        return view('landing.pages.agenda.agenda', $data);
+        return view('landing.pages.activity.activity', $data);
     }
 
     /**
@@ -40,8 +40,8 @@ class AgendaLandingController extends Controller
     public function show(string $slug): View
     {
         $data = [
-            'agenda' => $this->agenda->show($slug),
-            'latests' => $this->agenda->getLatest(5),
+            'activity' => $this->activity->show($slug),
+            'latests' => $this->activity->getLatest(5),
             'share' => ShareFacade::page(url()->full(), 'Share title')
                 ->facebook()
                 ->twitter()
@@ -50,6 +50,6 @@ class AgendaLandingController extends Controller
                 ->getRawLinks(),
         ];
 
-        return view('landing.pages.agenda.detail_agenda', $data);
+        return view('landing.pages.activity.detail_activity', $data);
     }
 }

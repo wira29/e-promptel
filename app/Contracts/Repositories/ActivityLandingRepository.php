@@ -2,18 +2,17 @@
 
 namespace App\Contracts\Repositories;
 
-use App\Contracts\Interfaces\AgendaLandingInterface;
+use App\Contracts\Interfaces\ActivityLandingInterface;
 use App\Contracts\Repositories\BaseRepository;
-use App\Models\Agenda;
-use App\Models\Article;
+use App\Models\Activity;
 use Illuminate\Pagination\LengthAwarePaginator;
 
-class AgendaLandingRepository extends BaseRepository implements AgendaLandingInterface
+class ActivityLandingRepository extends BaseRepository implements ActivityLandingInterface
 {
 
-    public function __construct(Agenda $agenda)
+    public function __construct(Activity $activity)
     {
-        $this->model = $agenda;
+        $this->model = $activity;
     }
 
     /**

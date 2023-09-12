@@ -62,7 +62,7 @@
                         </li>
                         <li class="menu-item-has-children">
                             <a
-                                class="{{ request()->routeIs('activities') || request()->routeIs('landing.agenda') ? 'active' : '' }}"
+                                class="{{ request()->routeIs('landing.activities') || request()->routeIs('landing.agenda') ? 'active' : '' }}"
                                 href="index-2.html"
                             >
                                 Berita</a
@@ -72,7 +72,7 @@
                                     <a href="{{ route('landing.agenda') }}">Agenda</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('activities') }}"
+                                    <a href="{{ route('landing.activities') }}"
                                         >Kegiatan</a
                                     >
                                 </li>

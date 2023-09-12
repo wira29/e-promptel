@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ActivityLandingController;
 use App\Http\Controllers\AgendaLandingController;
 use App\Http\Controllers\ArticleLandingController;
 use App\Http\Controllers\AudioLandingController;
@@ -44,6 +45,8 @@ Route::name('landing.')->group(function () {
     Route::get('/organization', [HomeLandingController::class, 'organization'])->name('organization');
     Route::get('/agenda', [AgendaLandingController::class, 'index'])->name('agenda');
     Route::get('/agenda/{slug}', [AgendaLandingController::class, 'show'])->name('detail-agenda');
+    Route::get('/activities', [ActivityLandingController::class, 'index'])->name('activities');
+    Route::get('/activities/{slug}', [ActivityLandingController::class, 'show'])->name('detail-activities');
     Route::get('/polling', function () {
         return view('landing.pages.polling.polling');
     })->name('polling');
@@ -58,12 +61,12 @@ Route::name('landing.')->group(function () {
 //Route::get('/agenda', function () {
 //    return view('landing.pages.agenda.agenda');
 //})->name('agenda');
-Route::get('/activities', function () {
-    return view('landing.pages.activity.activity');
-})->name('activities');
-Route::get('/news/{id}', function () {
-    return view('landing.pages.news.detail_news');
-})->name('detail-news');
+//Route::get('/activities', function () {
+//    return view('landing.pages.activity.activity');
+//})->name('activities');
+//Route::get('/news/{id}', function () {
+//    return view('landing.pages.news.detail_news');
+//})->name('detail-news');
 //Route::get('/videos', function () {
 //    return view('landing.pages.videos.videos');
 //})->name('videos');

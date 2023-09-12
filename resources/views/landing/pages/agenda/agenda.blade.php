@@ -33,7 +33,7 @@
                                                 <a
                                                     class="img-link"
                                                     href="{{
-                                                    route('landing.detail-agenda', $agenda->id)
+                                                    route('landing.detail-agenda', $agenda->slug)
                                                 }}"
                                                 ></a>
                                             </div>
@@ -56,7 +56,7 @@
                                                             href="{{
                                                             route(
                                                                 'landing.detail-agenda',
-                                                                $agenda->id
+                                                                $agenda->slug
                                                             )
                                                         }}"
                                                         >{{ $agenda->title }}</a
@@ -108,7 +108,7 @@
                                                 >
                                                     <a
                                                         href="{{
-                                                        route('landing.detail-agenda', $latest->id)
+                                                        route('landing.detail-agenda', $latest->slug)
                                                     }}"
                                                     >{{ $latest->title }}</a
                                                     >
@@ -127,7 +127,7 @@
                                                 <a
                                                     class="color-white"
                                                     href="{{
-                                                    route('landing.detail-agenda', $latest->id)
+                                                    route('landing.detail-agenda', $latest->slug)
                                                 }}"
                                                 >
                                                     <img
