@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Contracts\Interfaces\ArticleLandingInterface;
 use App\Http\Controllers\Controller;
 use Illuminate\View\View;
+use Jorenvh\Share\Share;
+use Jorenvh\Share\ShareFacade;
 
 class ArticleLandingController extends Controller
 {
@@ -41,7 +43,13 @@ class ArticleLandingController extends Controller
     {
         $data = [
             'article' => $this->article->show($slug),
-            'latests' => $this->article->getLatest(5)
+            'latests' => $this->article->getLatest(5),
+            'share' => ShareFacade::page(url()->full(), 'Share title')
+                ->facebook()
+                ->twitter()
+                ->telegram()
+                ->whatsapp()
+                ->getRawLinks(),
         ];
 
         return view('landing.pages.articles.detail_article', $data);

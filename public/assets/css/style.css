@@ -1096,6 +1096,8 @@ header .search-icon .ti-close,
 }
 .pagination-area .page-item.active .page-link {
     color: #fff !important;
+    background-color: var(--color-primary)!important;
+    border-color: var(--color-primary)!important;
 }
 .page-item:last-child .page-link,
 .page-item:first-child .page-link {

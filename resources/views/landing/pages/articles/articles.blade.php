@@ -100,7 +100,7 @@
                                                 >
                                                     <a
                                                         href="{{
-                                                        route('landing.detail-article', $article->slug)
+                                                        route('landing.detail-article', $latest->slug)
                                                     }}"
                                                     >{{ $latest->title }}</a
                                                     >
@@ -119,11 +119,11 @@
                                                 <a
                                                     class="color-white"
                                                     href="{{
-                                                    route('landing.detail-article', $article->slug)
+                                                    route('landing.detail-article', $latest->slug)
                                                 }}"
                                                 >
                                                     <img
-                                                        src="{{ asset('storage/' . $article->thumbnail ) }}"
+                                                        src="{{ asset('storage/' . $latest->thumbnail ) }}"
                                                         alt=""
                                                     />
                                                 </a>

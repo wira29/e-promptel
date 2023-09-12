@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AgendaLandingController;
 use App\Http\Controllers\ArticleLandingController;
 use App\Http\Controllers\AudioLandingController;
 use App\Http\Controllers\Dashboard\AboutController;
@@ -41,6 +42,8 @@ Route::name('landing.')->group(function () {
     Route::get('/', [HomeLandingController::class, 'index'])->name('home');
     Route::get('/vision-mission', [HomeLandingController::class, 'visionMission'])->name('vision-mission');
     Route::get('/organization', [HomeLandingController::class, 'organization'])->name('organization');
+    Route::get('/agenda', [AgendaLandingController::class, 'index'])->name('agenda');
+    Route::get('/agenda/{slug}', [AgendaLandingController::class, 'show'])->name('detail-agenda');
     Route::get('/polling', function () {
         return view('landing.pages.polling.polling');
     })->name('polling');
@@ -52,9 +55,9 @@ Route::name('landing.')->group(function () {
     })->name('contact');
 });
 
-Route::get('/agenda', function () {
-    return view('landing.pages.agenda.agenda');
-})->name('agenda');
+//Route::get('/agenda', function () {
+//    return view('landing.pages.agenda.agenda');
+//})->name('agenda');
 Route::get('/activities', function () {
     return view('landing.pages.activity.activity');
 })->name('activities');
@@ -107,4 +110,4 @@ Route::middleware('auth')->prefix('dashboard')->group(function () {
     });
 });
 
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

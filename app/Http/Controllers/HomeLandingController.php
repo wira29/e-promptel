@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Contracts\Interfaces\AboutLandingInterface;
+use App\Contracts\Interfaces\ArticleLandingInterface;
+use App\Contracts\Interfaces\AudioLandingInterface;
 use App\Contracts\Interfaces\OrganizationLandingInterface;
+use App\Contracts\Interfaces\VideoLandingInterface;
 use App\Contracts\Interfaces\VisionMissionLandingInterface;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -13,11 +16,18 @@ class HomeLandingController extends Controller
     private AboutLandingInterface $about;
     private VisionMissionLandingInterface $visionMission;
     private OrganizationLandingInterface $organization;
-    public function __construct(AboutLandingInterface $about, VisionMissionLandingInterface $visionMission, OrganizationLandingInterface $organization)
+    private VideoLandingInterface $videos;
+    private ArticleLandingInterface $article;
+    private AudioLandingInterface $audio;
+
+    public function __construct(AboutLandingInterface $about, VisionMissionLandingInterface $visionMission, OrganizationLandingInterface $organization, VideoLandingInterface $videos, ArticleLandingInterface $article, AudioLandingInterface $audio)
     {
         $this->about = $about;
         $this->visionMission = $visionMission;
         $this->organization = $organization;
+        $this->videos = $videos;
+        $this->article = $article;
+        $this->audio = $audio;
     }
 
     /**
@@ -27,7 +37,12 @@ class HomeLandingController extends Controller
      */
     public function index(): View
     {
-        return view('landing.pages.home.index');
+        $data = [
+            "videos" => $this->videos->getLatest(3),
+            "articles" => $this->article->getLatest(4),
+            "audios" => $this->audio->getLatest(4),
+        ];
+        return view('landing.pages.home.index', $data);
     }
 
     /**
