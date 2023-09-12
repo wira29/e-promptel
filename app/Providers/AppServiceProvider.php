@@ -3,22 +3,30 @@
 namespace App\Providers;
 
 use App\Contracts\Interfaces\AboutInterface;
+use App\Contracts\Interfaces\AboutLandingInterface;
 use App\Contracts\Interfaces\ArticleInterface;
+use App\Contracts\Interfaces\ArticleLandingInterface;
 use App\Contracts\Interfaces\AudioInterface;
 use App\Contracts\Interfaces\AudioLandingInterface;
 use App\Contracts\Interfaces\CategoryInterface;
 use App\Contracts\Interfaces\OrganizationInterface;
+use App\Contracts\Interfaces\OrganizationLandingInterface;
 use App\Contracts\Interfaces\VideoInterface;
 use App\Contracts\Interfaces\VideoLandingInterface;
 use App\Contracts\Interfaces\VisionMissionInterface;
+use App\Contracts\Interfaces\VisionMissionLandingInterface;
+use App\Contracts\Repositories\AboutLandingRepository;
 use App\Contracts\Repositories\AboutRepository;
+use App\Contracts\Repositories\ArticleLandingRepository;
 use App\Contracts\Repositories\ArticleRepository;
 use App\Contracts\Repositories\AudioLandingRepository;
 use App\Contracts\Repositories\AudioRepository;
 use App\Contracts\Repositories\CategoryRepository;
+use App\Contracts\Repositories\OrganizationLandingRepository;
 use App\Contracts\Repositories\OrganizationRepository;
 use App\Contracts\Repositories\VideoLandingRepository;
 use App\Contracts\Repositories\VideoRepository;
+use App\Contracts\Repositories\VisionMissionLandingRepository;
 use App\Contracts\Repositories\VisionMissionRepository;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
@@ -35,6 +43,10 @@ class AppServiceProvider extends ServiceProvider
         VideoLandingInterface::class => VideoLandingRepository::class,
         OrganizationInterface::class => OrganizationRepository::class,
         AudioLandingInterface::class => AudioLandingRepository::class,
+        ArticleLandingInterface::class => ArticleLandingRepository::class,
+        AboutLandingInterface::class => AboutLandingRepository::class,
+        VisionMissionLandingInterface::class => VisionMissionLandingRepository::class,
+        OrganizationLandingInterface::class => OrganizationLandingRepository::class,
     ];
 
     /**

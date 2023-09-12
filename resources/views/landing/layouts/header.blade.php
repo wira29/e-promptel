@@ -3,13 +3,13 @@
         <div class="container">
             <div class="row pt-20 pb-20">
                 <div class="col-md-3 col-xs-6">
-                    <a href="index-2.html">
-                        <!-- <img
+                    <a href="{{ route('landing.home') }}">
+                        <img
                             class="logo"
-                            src="assets/imgs/theme/logo.png"
+                            src="{{ asset('logo.png') }}"
                             alt=""
-                    /> -->
-                        E-Promptel
+                            width="80"
+                    />
                     </a>
                 </div>
                 <div class="col-md-9 col-xs-6 text-end header-top-right">
@@ -34,27 +34,27 @@
                     <ul class="main-menu d-none d-lg-inline font-small">
                         <li class="menu-item-has-children">
                             <a
-                                class="{{ request()->routeIs('home') || request()->routeIs('agenda') ? 'active' : '' }}"
+                                class="{{ request()->routeIs('landing.home') || request()->routeIs('landing.about') || request()->routeIs('landing.vision-mission') || request()->routeIs('landing.organization') ? 'active' : '' }}"
                                 href="index-2.html"
                             >
                                 Beranda</a
                             >
                             <ul class="sub-menu text-muted font-small">
                                 <li>
-                                    <a href="{{ route('home') }}">Beranda</a>
+                                    <a href="{{ route('landing.home') }}">Beranda</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('activities') }}"
+                                    <a href="{{ route('landing.about') }}"
                                         >Tentang</a
                                     >
                                 </li>
                                 <li>
-                                    <a href="{{ route('activities') }}"
+                                    <a href="{{ route('landing.vision-mission') }}"
                                         >Visi Misi</a
                                     >
                                 </li>
                                 <li>
-                                    <a href="{{ route('activities') }}"
+                                    <a href="{{ route('landing.organization') }}"
                                         >Struktur Organisasi</a
                                     >
                                 </li>
@@ -80,7 +80,7 @@
                         </li>
                         <li class="menu-item-has-children">
                             <a
-                                class="{{ request()->routeIs('landing.videos') || request()->routeIs('landing.audios') || request()->routeIs('articles') ? 'active' : '' }}"
+                                class="{{ request()->routeIs('landing.videos') || request()->routeIs('landing.audios') || request()->routeIs('landing.articles') ? 'active' : '' }}"
                                 href="index-2.html"
                             >
                                 Layanan</a
@@ -97,7 +97,7 @@
                                     >
                                 </li>
                                 <li>
-                                    <a href="{{ route('articles') }}"
+                                    <a href="{{ route('landing.articles') }}"
                                         >Artikel</a
                                     >
                                 </li>
@@ -105,15 +105,15 @@
                         </li>
                         <li>
                             <a
-                                class="{{ request()->routeIs('polling') ? 'active' : '' }}"
-                                href="{{ route('polling') }}"
+                                class="{{ request()->routeIs('landing.polling') ? 'active' : '' }}"
+                                href="{{ route('landing.polling') }}"
                                 >Polling</a
                             >
                         </li>
                         <li>
                             <a
                                 class="{{ request()->routeIs('contact') ? 'active' : '' }}"
-                                href="{{ route('contact') }}"
+                                href="{{ route('landing.contact') }}"
                                 >Kontak</a
                             >
                         </li>

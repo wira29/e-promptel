@@ -4,54 +4,13 @@
             <div class="col-lg-5 col-md-6">
                 <div class="sidebar-widget wow fadeInUp animated mb-30">
                     <div class="widget-header-2 position-relative mb-30">
-                        <h5 class="mt-5 mb-30">About me</h5>
+                        <h5 class="mt-5 mb-30">Tentang Kami</h5>
                     </div>
                     <div class="textwidget">
                         <p>
                             Start writing, no matter what. The water does not
                             flow until the faucet is turned on.
                         </p>
-                        <p>
-                            <strong class="color-black">Address</strong><br />
-                            123 Main Street<br />
-                            New York, NY 10001
-                        </p>
-                        <p>
-                            <strong class="color-black">Follow me</strong><br />
-                        </p>
-                        <ul
-                            class="header-social-network d-inline-block list-inline color-white mb-20"
-                        >
-                            <li class="list-inline-item">
-                                <a
-                                    class="fb"
-                                    href="#"
-                                    target="_blank"
-                                    title="Facebook"
-                                    ><i class="elegant-icon social_facebook"></i
-                                ></a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a
-                                    class="tw"
-                                    href="#"
-                                    target="_blank"
-                                    title="Tweet now"
-                                    ><i class="elegant-icon social_twitter"></i
-                                ></a>
-                            </li>
-                            <li class="list-inline-item">
-                                <a
-                                    class="pt"
-                                    href="#"
-                                    target="_blank"
-                                    title="Pin it"
-                                    ><i
-                                        class="elegant-icon social_pinterest"
-                                    ></i
-                                ></a>
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </div>
@@ -65,22 +24,19 @@
                     </div>
                     <ul class="font-small">
                         <li class="cat-item cat-item-2">
-                            <a href="#">About me</a>
+                            <a href="{{ route('landing.home') }}">Beranda</a>
                         </li>
                         <li class="cat-item cat-item-4">
-                            <a href="#">Help & Support</a>
+                            <a href="{{ route('landing.videos') }}">Materi Video</a>
                         </li>
                         <li class="cat-item cat-item-5">
-                            <a href="#">​​Licensing Policy</a>
+                            <a href="{{ route('landing.audios') }}">Materi Audio</a>
                         </li>
                         <li class="cat-item cat-item-6">
-                            <a href="#">Refund Policy</a>
+                            <a href="{{ route('landing.polling') }}">Polling</a>
                         </li>
                         <li class="cat-item cat-item-7">
-                            <a href="#">Hire me</a>
-                        </li>
-                        <li class="cat-item cat-item-7">
-                            <a href="#">Contact</a>
+                            <a href="{{ route('landing.contact') }}">Contact</a>
                         </li>
                     </ul>
                 </div>
@@ -94,48 +50,49 @@
                         <h5 class="mt-5 mb-30">Sosial Media</h5>
                     </div>
                     <div class="newsletter">
-                        <p class="font-medium">
-                            Subscribe to our newsletter and get our newest
-                            updates right on your inbox.
-                        </p>
-                        <form class="input-group form-subcriber mt-30 d-flex">
-                            <input
-                                type="email"
-                                class="form-control bg-white font-small"
-                                placeholder="Enter your email"
-                            />
-                            <button
-                                class="btn bg-primary text-white"
-                                type="submit"
-                            >
-                                Subscribe
-                            </button>
-                            <label class="mt-20">
-                                <input
-                                    class="mr-5"
-                                    name="name"
-                                    type="checkbox"
-                                    value="1"
-                                    required=""
-                                />
-                                I agree to the
-                                <a href="#" target="_blank"
-                                    >terms &amp; conditions</a
-                                >
-                            </label>
-                        </form>
+                        <ul
+                            class="header-social-network d-inline-block list-inline color-white mb-20"
+                        >
+                            <li class="list-inline-item">
+                                <a
+                                    class="fb"
+                                    href="#"
+                                    target="_blank"
+                                    title="Facebook"
+                                ><i class="elegant-icon social_facebook"></i
+                                    ></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a
+                                    class="tw"
+                                    href="#"
+                                    target="_blank"
+                                    title="Tweet now"
+                                ><i class="elegant-icon social_twitter"></i
+                                    ></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <a
+                                    class="pt"
+                                    href="#"
+                                    target="_blank"
+                                    title="Pin it"
+                                ><i
+                                        class="elegant-icon social_pinterest"
+                                    ></i
+                                    ></a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
         <div class="footer-copy-right pt-30 mt-20 wow fadeInUp animated">
             <p class="float-md-start font-small text-muted">
-                © 2023, Stories - Personal Blog HTML Template
+                © 2023, E-Promptel
             </p>
             <p class="float-md-end font-small text-muted">
-                Design by
-                <a href="https://alithemes.com/" target="_blank">AliThemes</a>
-                | All rights reserved
+                Politeknik Negeri Jember | POLIJE
             </p>
         </div>
     </div>

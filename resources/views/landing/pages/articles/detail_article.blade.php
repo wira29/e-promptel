@@ -6,7 +6,7 @@
                     <div class="single-content2">
                         <div class="entry-header entry-header-style-1 mb-50">
                             <h1 class="entry-title mb-30 font-weight-900">
-                                {{ $audio->title }}
+                                {{ $article->title }}
                             </h1>
                             <div class="row">
                                 <div class="col-md-6">
@@ -32,7 +32,7 @@
                                                 ></a
                                             >
                                         </p>
-                                        <span class="mr-10"> {{ \Carbon\Carbon::make($audio->date)->format('d F Y') }}</span>
+                                        <span class="mr-10"> {{ \Carbon\Carbon::make($article->date)->format('d F Y') }}</span>
                                     </div>
                                 </div>
                                 <div class="col-md-6 text-end d-none d-md-inline">
@@ -70,14 +70,14 @@
                         <figure
                             class="image mb-30 m-auto text-center border-radius-10"
                         >
-                            <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="{{ $audio->link }}"></iframe>
+                            <img width="100%" height="300" src="{{ asset('storage/' . $article->thumbnail) }}" />
                         </figure>
                         <!--figure-->
                         <article class="entry-wraper mb-50">
                             <div
                                 class="entry-main-content fadeIn animated"
                             >
-                                {!!$audio->content!!}
+                                {!!$article->content!!}
                             </div>
 
                         </article>
@@ -89,7 +89,7 @@
                             class="sidebar-widget widget-latest-posts mb-50 wow fadeInUp animated"
                         >
                             <div class="widget-header-1 position-relative mb-30">
-                                <h5 class="mt-5 mb-30">Audio Terbaru</h5>
+                                <h5 class="mt-5 mb-30">Artikel Terbaru</h5>
                             </div>
                             <div class="post-block-list post-module-1">
                                 <ul class="list-post">
@@ -102,7 +102,7 @@
                                                     <h6
                                                         class="post-title mb-15 text-limit-2-row font-medium"
                                                     >
-                                                        <a href="{{ route('landing.detail-audio', $latest->slug) }}"
+                                                        <a href="{{ route('landing.detail-article', $latest->slug) }}"
                                                         >{{ $latest->title }}</a
                                                         >
                                                     </h6>
@@ -119,10 +119,10 @@
                                                 >
                                                     <a
                                                         class="color-white"
-                                                        href="{{ route('landing.detail-audio', $latest->slug) }}"
+                                                        href="{{ route('landing.detail-article', $latest->slug) }}"
                                                     >
                                                         <img
-                                                            src="https://i1.sndcdn.com/artworks-000052143490-fn8adk-t500x500.jpg"
+                                                            src="{{ asset('storage/'. $latest->thumbnail) }}"
                                                             alt=""
                                                         />
                                                     </a>
