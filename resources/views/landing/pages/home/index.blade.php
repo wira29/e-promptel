@@ -16,7 +16,7 @@
                                     background-image: url('https://i.ytimg.com/vi/{{ $video->link }}/hqdefault.jpg');
                                 "
                                 >
-                                    <a class="img-link" href="{{ route('landing.detail-videos', $video->id) }}"></a>
+                                    <a class="img-link" href="{{ route('landing.detail-videos', $video->slug) }}"></a>
                                     <div
                                         class="post-content-overlay text-white ml-30 mr-30 pb-30"
                                     >
@@ -33,7 +33,7 @@
                                         <h3
                                             class="post-title font-weight-900 mb-20"
                                         >
-                                            <a class="text-white" href="{{ route('landing.detail-videos', $video->id) }}"
+                                            <a class="text-white" href="{{ route('landing.detail-videos', $video->slug) }}"
                                             >{{ $video->title }}</a
                                             >
                                         </h3>
