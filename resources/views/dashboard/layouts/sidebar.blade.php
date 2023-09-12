@@ -30,6 +30,15 @@
                 <span class="hide-menu">Beranda</span>
             </a>
         </li>
+        <li class="sidebar-item">
+            <a class="sidebar-link {{ request()->routeIs('categories.*') ? 'active' : '' }}"
+               href="{{ route('categories.index') }}" aria-expanded="false">
+                  <span>
+                    <i class="ti ti-list-details"></i>
+                  </span>
+                <span class="hide-menu">Kategori</span>
+            </a>
+        </li>
         <li class="nav-small-cap">
             <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
             <span class="hide-menu">Layanan</span>
@@ -57,15 +66,6 @@
             <span class="hide-menu">Artikel Kesehatan</span>
         </li>
         <li class="sidebar-item">
-            <a class="sidebar-link {{ request()->routeIs('categories.*') ? 'active' : '' }}"
-               href="{{ route('categories.index') }}" aria-expanded="false">
-                  <span>
-                    <i class="ti ti-list-details"></i>
-                  </span>
-                <span class="hide-menu">Kategori</span>
-            </a>
-        </li>
-        <li class="sidebar-item">
             <a class="sidebar-link {{ request()->routeIs('articles.*') ? 'active' : '' }}"
                href="{{ route('articles.index') }}" aria-expanded="false">
                   <span>
@@ -79,8 +79,8 @@
             <span class="hide-menu">Berita</span>
         </li>
         <li class="sidebar-item">
-            <a class="sidebar-link"
-               href="#" aria-expanded="false">
+            <a class="sidebar-link {{ request()->routeIs('agendas.*') ? 'active' : '' }}"
+               href="{{ route('agendas.index') }}" aria-expanded="false">
                   <span>
                     <i class="ti ti-file-text"></i>
                   </span>
@@ -88,8 +88,8 @@
             </a>
         </li>
         <li class="sidebar-item">
-            <a class="sidebar-link"
-               href="#" aria-expanded="false">
+            <a class="sidebar-link {{ request()->routeIs('activities.*') ? 'active' : '' }}"
+               href="{{ route('activities.index') }}" aria-expanded="false">
                   <span>
                     <i class="ti ti-file-text"></i>
                   </span>

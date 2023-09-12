@@ -2,9 +2,11 @@
 
 namespace App\Providers;
 
+use App\Models\Agenda;
 use App\Models\Article;
 use App\Models\Audio;
 use App\Models\Video;
+use App\Observers\AgendaObserver;
 use App\Observers\ArticleObserver;
 use App\Observers\AudioObserver;
 use App\Observers\VideoObserver;
@@ -33,6 +35,7 @@ class EventServiceProvider extends ServiceProvider
         Article::observe(ArticleObserver::class);
         Audio::observe(AudioObserver::class);
         Video::observe(VideoObserver::class);
+        Agenda::observe(AgendaObserver::class);
     }
 
     /**

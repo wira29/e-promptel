@@ -3,6 +3,8 @@
 use App\Http\Controllers\ArticleLandingController;
 use App\Http\Controllers\AudioLandingController;
 use App\Http\Controllers\Dashboard\AboutController;
+use App\Http\Controllers\Dashboard\ActivityController;
+use App\Http\Controllers\Dashboard\AgendaController;
 use App\Http\Controllers\Dashboard\ArticleController;
 use App\Http\Controllers\Dashboard\AudioController;
 use App\Http\Controllers\Dashboard\CategoryController;
@@ -87,7 +89,9 @@ Route::middleware('auth')->prefix('dashboard')->group(function () {
         'categories' => CategoryController::class,
         'articles' => ArticleController::class,
         'audios' => AudioController::class,
-        'videos' => VideoController::class
+        'videos' => VideoController::class,
+        'agendas' => AgendaController::class,
+        'activities' => ActivityController::class
     ]);
 
     Route::resources([
