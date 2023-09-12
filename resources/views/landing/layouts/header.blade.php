@@ -62,14 +62,14 @@
                         </li>
                         <li class="menu-item-has-children">
                             <a
-                                class="{{ request()->routeIs('activities') || request()->routeIs('agenda') ? 'active' : '' }}"
+                                class="{{ request()->routeIs('activities') || request()->routeIs('landing.agenda') ? 'active' : '' }}"
                                 href="index-2.html"
                             >
                                 Berita</a
                             >
                             <ul class="sub-menu text-muted font-small">
                                 <li>
-                                    <a href="{{ route('agenda') }}">Agenda</a>
+                                    <a href="{{ route('landing.agenda') }}">Agenda</a>
                                 </li>
                                 <li>
                                     <a href="{{ route('activities') }}"
