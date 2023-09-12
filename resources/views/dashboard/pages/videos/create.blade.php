@@ -11,6 +11,25 @@
                     <div class="col-9">
                         <h4 class="fw-semibold mb-8 text-white">Master Video</h4>
                     </div>
+                    <div class="col-lg-10 text-white mt-3">
+                        <strong>Langkah-langkah menambah Video:</strong>
+                        <ol>
+                            <li>Buka website resmi dari <a style="text-decoration: underline" class="text-white"
+                                                           href="https://youtube.com/">https://youtube.com</a>
+                            </li>
+                            <li>Cari dan pilih Video yang akan dipasang, kemudian klik Video</li>
+                            <li>Salin kode video yang berada pada url website</li>
+                            <li>
+                                <a target="_blank"
+                                   style="text-decoration: underline"
+                                   class="text-white"
+                                   href="{{ asset('video-tutorial.png') }}">Lihat
+                                    Screenshot Berikut</a>
+                            </li>
+                            <li>Perlu diketahui video yang bisa disalin hanya video yang diizinkan penyematannya.
+                            </li>
+                        </ol>
+                    </div>
                 </div>
             </div>
         </div>
@@ -69,7 +88,7 @@
                                     <input value="{{ old('link') }}" autocomplete="off" name="link" type="text"
                                            class="form-control @error('link') is-invalid @enderror" id="tb-fname"
                                            placeholder="Enter Name here">
-                                    <label for="tb-fname">Link Video</label>
+                                    <label for="tb-fname">Kode Video Pada Youtube</label>
                                     @error('link')
                                     <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>

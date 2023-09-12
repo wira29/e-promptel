@@ -11,6 +11,25 @@
                     <div class="col-9">
                         <h4 class="fw-semibold mb-8 text-white">Master Audio</h4>
                     </div>
+                    <div class="col-lg-10 text-white mt-3">
+                        <strong>Langkah-langkah menambah Audio:</strong>
+                        <ol>
+                            <li>Buka website resmi dari <a style="text-decoration: underline" class="text-white"
+                                                           href="https://soundcloud.com/">https://soundcloud.com</a>
+                            </li>
+                            <li>Cari dan pilih Audio yang akan dipasang, kemudian klik Audio</li>
+                            <li>Klik tombol share, kemudian akan muncul popup window klik menu Embed</li>
+                            <li>Perhatikan pada Section Code, Silahkan copy paste kode 'iframe' secara keseluruhan</li>
+                            <li>Pastekan kode pada notepad, kemudian ambil hanya bagian (src="") saja.</li>
+                            <li>
+                                <a target="_blank"
+                                   style="text-decoration: underline"
+                                   class="text-white"
+                                   href="{{ asset('audio-tutorial.png') }}">Lihat
+                                    Screenshot Berikut</a>
+                            </li>
+                        </ol>
+                    </div>
                 </div>
             </div>
         </div>
