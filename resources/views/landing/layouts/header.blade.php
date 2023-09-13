@@ -112,7 +112,7 @@
                         </li>
                         <li>
                             <a
-                                class="{{ request()->routeIs('contact') ? 'active' : '' }}"
+                                class="{{ request()->routeIs('landing.contact') ? 'active' : '' }}"
                                 href="{{ route('landing.contact') }}"
                                 >Kontak</a
                             >

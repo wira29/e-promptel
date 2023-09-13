@@ -4,6 +4,7 @@ use App\Http\Controllers\ActivityLandingController;
 use App\Http\Controllers\AgendaLandingController;
 use App\Http\Controllers\ArticleLandingController;
 use App\Http\Controllers\AudioLandingController;
+use App\Http\Controllers\ContactLandingController;
 use App\Http\Controllers\Dashboard\AboutController;
 use App\Http\Controllers\Dashboard\ActivityController;
 use App\Http\Controllers\Dashboard\AgendaController;
@@ -54,9 +55,7 @@ Route::name('landing.')->group(function () {
     Route::get('/polling/form/{id}', function () {
         return view('landing.pages.polling.polling_form');
     })->name('polling-form');
-    Route::get('/contact', function () {
-        return view('landing.pages.contact.contact');
-    })->name('contact');
+    Route::get('/contact', [ContactLandingController::class, 'index'])->name('contact');
 });
 
 //Route::get('/agenda', function () {

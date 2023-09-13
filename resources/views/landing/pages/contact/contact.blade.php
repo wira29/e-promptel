@@ -9,14 +9,7 @@
 </div>
 <div class="container single-content">
     <div class="entry-wraper mt-50">
-        <p class="font-large">
-            We are AliThemes , a creative and dedicated group of individuals who
-            love web development almost as much as we love our customers. We are
-            passionate team with the mission for achieving the perfection in web
-            design. All designs are made by love with pixel perfect design and
-            excellent coding quality. Speed, security and SEO friendly alway in
-            our mind.
-        </p>
+        {!! $contact->description !!}
     </div>
 </div>
 @endsection
