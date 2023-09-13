@@ -16,6 +16,7 @@ use App\Contracts\Interfaces\CategoryInterface;
 use App\Contracts\Interfaces\ContactInterface;
 use App\Contracts\Interfaces\OrganizationInterface;
 use App\Contracts\Interfaces\OrganizationLandingInterface;
+use App\Contracts\Interfaces\PollInterface;
 use App\Contracts\Interfaces\VideoInterface;
 use App\Contracts\Interfaces\VideoLandingInterface;
 use App\Contracts\Interfaces\VisionMissionInterface;
@@ -34,6 +35,7 @@ use App\Contracts\Repositories\CategoryRepository;
 use App\Contracts\Repositories\ContactRepository;
 use App\Contracts\Repositories\OrganizationLandingRepository;
 use App\Contracts\Repositories\OrganizationRepository;
+use App\Contracts\Repositories\PollRepository;
 use App\Contracts\Repositories\VideoLandingRepository;
 use App\Contracts\Repositories\VideoRepository;
 use App\Contracts\Repositories\VisionMissionLandingRepository;
@@ -61,7 +63,8 @@ class AppServiceProvider extends ServiceProvider
         ActivityInterface::class => ActivityRepository::class,
         AgendaLandingInterface::class => AgendaLandingRepository::class,
         ActivityLandingInterface::class => ActivityLandingRepository::class,
-        ContactInterface::class => ContactRepository::class
+        ContactInterface::class => ContactRepository::class,
+        PollInterface::class => PollRepository::class
     ];
 
     /**

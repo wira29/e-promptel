@@ -14,7 +14,9 @@ use App\Http\Controllers\Dashboard\ChangePasswordController;
 use App\Http\Controllers\Dashboard\ContactController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Dashboard\OrganizationController;
+use App\Http\Controllers\Dashboard\PollController;
 use App\Http\Controllers\Dashboard\ProfileController;
+use App\Http\Controllers\Dashboard\QuestionController;
 use App\Http\Controllers\Dashboard\VideoController;
 use App\Http\Controllers\Dashboard\VisionMissionController;
 use App\Http\Controllers\HomeLandingController;
@@ -98,7 +100,9 @@ Route::middleware('auth')->prefix('dashboard')->group(function () {
         'audios' => AudioController::class,
         'videos' => VideoController::class,
         'agendas' => AgendaController::class,
-        'activities' => ActivityController::class
+        'activities' => ActivityController::class,
+        'polls' => PollController::class,
+        'questions' => QuestionController::class
     ]);
 
     Route::resources([
