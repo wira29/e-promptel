@@ -16,7 +16,8 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             AboutSeeder::class,
             VisionMissionSeeder::class,
-            OrganizationSeeder::class
+            OrganizationSeeder::class,
+            ContactSeeder::class
         ]);
     }
 }

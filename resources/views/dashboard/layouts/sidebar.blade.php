@@ -126,6 +126,15 @@
                 <span class="hide-menu">Struktur Organisasi</span>
             </a>
         </li>
+
+        <li class="sidebar-item">
+            <a class="sidebar-link" href="{{ route('contact.index') }}" aria-expanded="false">
+                  <span>
+                    <i class="ti ti-settings"></i>
+                  </span>
+                <span class="hide-menu">Kontak</span>
+            </a>
+        </li>
     </ul>
 
 </nav>

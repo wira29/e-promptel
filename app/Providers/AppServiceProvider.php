@@ -13,6 +13,7 @@ use App\Contracts\Interfaces\ArticleLandingInterface;
 use App\Contracts\Interfaces\AudioInterface;
 use App\Contracts\Interfaces\AudioLandingInterface;
 use App\Contracts\Interfaces\CategoryInterface;
+use App\Contracts\Interfaces\ContactInterface;
 use App\Contracts\Interfaces\OrganizationInterface;
 use App\Contracts\Interfaces\OrganizationLandingInterface;
 use App\Contracts\Interfaces\VideoInterface;
@@ -30,6 +31,7 @@ use App\Contracts\Repositories\ArticleRepository;
 use App\Contracts\Repositories\AudioLandingRepository;
 use App\Contracts\Repositories\AudioRepository;
 use App\Contracts\Repositories\CategoryRepository;
+use App\Contracts\Repositories\ContactRepository;
 use App\Contracts\Repositories\OrganizationLandingRepository;
 use App\Contracts\Repositories\OrganizationRepository;
 use App\Contracts\Repositories\VideoLandingRepository;
@@ -59,6 +61,7 @@ class AppServiceProvider extends ServiceProvider
         ActivityInterface::class => ActivityRepository::class,
         AgendaLandingInterface::class => AgendaLandingRepository::class,
         ActivityLandingInterface::class => ActivityLandingRepository::class,
+        ContactInterface::class => ContactRepository::class
     ];
 
     /**

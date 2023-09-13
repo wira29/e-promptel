@@ -11,6 +11,7 @@ use App\Http\Controllers\Dashboard\ArticleController;
 use App\Http\Controllers\Dashboard\AudioController;
 use App\Http\Controllers\Dashboard\CategoryController;
 use App\Http\Controllers\Dashboard\ChangePasswordController;
+use App\Http\Controllers\Dashboard\ContactController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Dashboard\OrganizationController;
 use App\Http\Controllers\Dashboard\ProfileController;
@@ -103,7 +104,8 @@ Route::middleware('auth')->prefix('dashboard')->group(function () {
     Route::resources([
         'about' => AboutController::class,
         'vision-mission' => VisionMissionController::class,
-        'organization' => OrganizationController::class
+        'organization' => OrganizationController::class,
+        'contact' => ContactController::class
     ], ['only' => ['index', 'update']]);
 
     Route::name('user.')->group(function () {
@@ -113,4 +115,4 @@ Route::middleware('auth')->prefix('dashboard')->group(function () {
     });
 });
 
- Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
