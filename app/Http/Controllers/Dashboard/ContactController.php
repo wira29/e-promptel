@@ -42,5 +42,6 @@ class ContactController extends Controller
         $this->contact->update($contact->id, $request->validated());
 
         return back()->with('success', trans('alert.update_success'));
+
     }
 }
