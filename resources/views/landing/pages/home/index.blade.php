@@ -140,55 +140,13 @@
                                         <div
                                             class="post-thumb thumb-overlay img-hover-slide position-relative"
                                             style="
-                                            background-image: url("{{ asset('storage/' . $article->thumbnail) }}");
+                                            background-image: url('{{ asset('storage/' . $article->thumbnail ) }}');
                                         "
                                         >
                                             <a
                                                 class="img-link"
                                                 href="{{ route('landing.detail-article', $article->slug) }}"
                                             ></a>
-                                            <ul class="social-share">
-                                                <li>
-                                                    <a href="#"
-                                                    ><i
-                                                            class="elegant-icon social_share"
-                                                        ></i
-                                                        ></a>
-                                                </li>
-                                                <li>
-                                                    <a
-                                                        class="fb"
-                                                        href="#"
-                                                        title="Share on Facebook"
-                                                        target="_blank"
-                                                    ><i
-                                                            class="elegant-icon social_facebook"
-                                                        ></i
-                                                        ></a>
-                                                </li>
-                                                <li>
-                                                    <a
-                                                        class="tw"
-                                                        href="#"
-                                                        target="_blank"
-                                                        title="Tweet now"
-                                                    ><i
-                                                            class="elegant-icon social_twitter"
-                                                        ></i
-                                                        ></a>
-                                                </li>
-                                                <li>
-                                                    <a
-                                                        class="pt"
-                                                        href="#"
-                                                        target="_blank"
-                                                        title="Pin it"
-                                                    ><i
-                                                            class="elegant-icon social_pinterest"
-                                                        ></i
-                                                        ></a>
-                                                </li>
-                                            </ul>
                                         </div>
                                         <div class="post-content p-30">
                                             <div
