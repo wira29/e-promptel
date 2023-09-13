@@ -61,9 +61,7 @@ class PollController extends Controller
      */
     public function show(Poll $poll): View
     {
-//        $questions = $this->questionBank->show($group_question->id);
-
-        return view('dashboard.pages.polls.index', compact('poll'));
+        return view('dashboard.pages.polls.show', compact('poll'));
     }
 
 

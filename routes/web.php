@@ -100,9 +100,10 @@ Route::middleware('auth')->prefix('dashboard')->group(function () {
         'videos' => VideoController::class,
         'agendas' => AgendaController::class,
         'activities' => ActivityController::class,
-        'polls' => PollController::class,
-        'questions' => QuestionController::class
+        'polls' => PollController::class
     ]);
+
+    Route::resource('questions', QuestionController::class)->only('store', 'destroy');
 
     Route::resources([
         'about' => AboutController::class,
