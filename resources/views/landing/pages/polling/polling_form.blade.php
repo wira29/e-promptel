@@ -1,8 +1,8 @@
 @extends('landing.layouts.app') @section('content')
-<div class="container single-content">
+    <div class="container single-content">
     <div class="entry-header entry-header-style-1 mb-50 pt-50">
         <h2 class="mb-50 font-weight-900 text-center">
-            Typography - Style Guide
+            {{ $poll->title }}
         </h2>
     </div>
     <article class="entry-wraper mb-50">
@@ -17,6 +17,9 @@
                 <button id="btn-back" type="button" class="btn btn-primary">
                     Kembali
                 </button>
+                <button id="btn-submit" style="display: none" type="button" class="btn btn-primary">
+                    Submit
+                </button>
                 <button id="btn-next" type="button" class="btn btn-primary">
                     Selanjutnya
                 </button>
@@ -27,19 +30,23 @@
 <!--container-->
 @endsection @section('script')
 <script>
+    var isSubmit = false;
     window.onbeforeunload = function () {
-        return "Perubahan yang Anda lakukan mungkin tidak disimpan.";
+        return (isSubmit) ? null : true;
     };
 
     var changeAnswer;
     $(document).ready(function () {
-        var questions = ["pertanyaan 1", "pertnyaan 2", "pertanyaan 3"];
-        var anwers = [3, 0, 0];
+        // var questions = ["pertanyaan 1"];
+        var questions = <?php echo json_encode($questions); ?>;
+        var questions_id = <?php echo json_encode($questions_id); ?>;
+        // console.log(questions)
+        var answers = [];
+        questions.map((e) => answers.push(0))
         var currentIdx = 0;
 
         changeAnswer = (point) => {
-            anwers[currentIdx] = point;
-            console.log(anwers);
+            answers[currentIdx] = point;
         };
 
         function showQuestion() {
@@ -53,6 +60,8 @@
             } else if (currentIdx == questions.length - 1) {
                 $("#btn-back").removeAttr("disabled");
                 $("#btn-next").attr("disabled", true);
+
+                $("#btn-submit").css("display", "block")
             } else {
                 $("#btn-back").removeAttr("disabled");
                 $("#btn-next").removeAttr("disabled");
@@ -67,42 +76,41 @@
             clearChecked();
             var elAnswers = $("#answers");
             var radios = `<div class="radio">
-                    <input id="radio-1" data-point="0" name="radio" type="radio" ${
-                        anwers[currentIdx] == 0 ? "checked" : ""
+                    <input id="radio-1" data-point="0" value="0" name="radio" type="radio" ${
+                        answers[currentIdx] == 0 ? "checked" : ""
                     } onclick="changeAnswer(0)" />
                     <label for="radio-1" class="radio-label"
                         >Sangat Setuju</label
                     >
                 </div>
                 <div class="radio">
-                    <input id="radio-2" data-point="1" name="radio" type="radio" ${
-                        anwers[currentIdx] == 1 ? "checked" : ""
+                    <input id="radio-2" data-point="1" value="1" name="radio" type="radio" ${
+                        answers[currentIdx] == 1 ? "checked" : ""
                     } onclick="changeAnswer(1)" />
                     <label for="radio-2" class="radio-label">Setuju</label>
                 </div>
                 <div class="radio">
-                    <input id="radio-3" data-point="2" name="radio" type="radio" ${
-                        anwers[currentIdx] == 2 ? "checked" : ""
+                    <input id="radio-3" data-point="2" value="2" name="radio" type="radio" ${
+                        answers[currentIdx] == 2 ? "checked" : ""
                     } onclick="changeAnswer(2)"/>
                     <label for="radio-3" class="radio-label">Netral</label>
                 </div>
                 <div class="radio">
-                    <input id="radio-4" data-point="3" name="radio" type="radio" ${
-                        anwers[currentIdx] == 3 ? "checked" : ""
+                    <input id="radio-4" data-point="3" value="3" name="radio" type="radio" ${
+                        answers[currentIdx] == 3 ? "checked" : ""
                     } onclick="changeAnswer(3)"/>
                     <label for="radio-4" class="radio-label"
                         >Tidak Setuju</label
                     >
                 </div>
                 <div class="radio">
-                    <input id="radio-5" data-point="4" name="radio" type="radio" ${
-                        anwers[currentIdx] == 4 ? "checked" : ""
+                    <input id="radio-5" data-point="4" value="4" name="radio" type="radio" ${
+                        answers[currentIdx] == 4 ? "checked" : ""
                     } onclick="changeAnswer(4)" />
                     <label for="radio-5" class="radio-label"
                         >Sangat Tidak Setuju</label
                     >
                 </div>`;
-            console.log(anwers);
             elAnswers.html("");
             elAnswers.append(radios);
         }
@@ -120,6 +128,31 @@
             checkPage();
             setSelectedAnswer();
         });
+
+        $('#btn-submit').click(function() {
+            var confirm = window.confirm("Apakah anda yakin ingin submit ??")
+            if(confirm)
+            {
+                $.ajax({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    url : "{{ route('landing.submit-polling') }}",
+                    type : 'POST',
+                    data: {
+                        "questions_id" : questions_id,
+                        "answers" : answers,
+                        "respondent_id" : "{{ $respondent->id }}"
+                    },
+                    success: function (e) {
+                        alert(e.message)
+                        isSubmit = true
+                        console.log(isSubmit)
+                        window.location.href = "{{ route("landing.polling") }}"
+                    }
+                })
+            }
+        })
 
         setSelectedAnswer();
         checkPage();

@@ -17,8 +17,12 @@ use App\Contracts\Interfaces\ContactInterface;
 use App\Contracts\Interfaces\ContactLandingInterface;
 use App\Contracts\Interfaces\OrganizationInterface;
 use App\Contracts\Interfaces\OrganizationLandingInterface;
+use App\Contracts\Interfaces\PollAnswerInterface;
+use App\Contracts\Interfaces\PollingLandingInterface;
 use App\Contracts\Interfaces\PollInterface;
 use App\Contracts\Interfaces\QuestionInterface;
+use App\Contracts\Interfaces\QuestionLandingInterface;
+use App\Contracts\Interfaces\RespondentInterface;
 use App\Contracts\Interfaces\VideoInterface;
 use App\Contracts\Interfaces\VideoLandingInterface;
 use App\Contracts\Interfaces\VisionMissionInterface;
@@ -38,8 +42,12 @@ use App\Contracts\Repositories\ContactLandingRepository;
 use App\Contracts\Repositories\ContactRepository;
 use App\Contracts\Repositories\OrganizationLandingRepository;
 use App\Contracts\Repositories\OrganizationRepository;
+use App\Contracts\Repositories\PollAnswerRepository;
+use App\Contracts\Repositories\PollingLandingRepository;
 use App\Contracts\Repositories\PollRepository;
+use App\Contracts\Repositories\QuestionLandingRepository;
 use App\Contracts\Repositories\QuestionRepository;
+use App\Contracts\Repositories\RespondentRepository;
 use App\Contracts\Repositories\VideoLandingRepository;
 use App\Contracts\Repositories\VideoRepository;
 use App\Contracts\Repositories\VisionMissionLandingRepository;
@@ -70,7 +78,11 @@ class AppServiceProvider extends ServiceProvider
         ContactInterface::class => ContactRepository::class,
         PollInterface::class => PollRepository::class,
         ContactLandingInterface::class => ContactLandingRepository::class,
-        QuestionInterface::class => QuestionRepository::class
+        QuestionInterface::class => QuestionRepository::class,
+        PollingLandingInterface::class => PollingLandingRepository::class,
+        QuestionLandingInterface::class => QuestionLandingRepository::class,
+        RespondentInterface::class => RespondentRepository::class,
+        PollAnswerInterface::class => PollAnswerRepository::class,
     ];
 
     /**

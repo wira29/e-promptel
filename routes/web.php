@@ -21,6 +21,7 @@ use App\Http\Controllers\Dashboard\QuestionController;
 use App\Http\Controllers\Dashboard\VideoController;
 use App\Http\Controllers\Dashboard\VisionMissionController;
 use App\Http\Controllers\HomeLandingController;
+use App\Http\Controllers\PollLandingController;
 use App\Http\Controllers\VideoLandingController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -51,12 +52,9 @@ Route::name('landing.')->group(function () {
     Route::get('/agenda/{slug}', [AgendaLandingController::class, 'show'])->name('detail-agenda');
     Route::get('/activities', [ActivityLandingController::class, 'index'])->name('activities');
     Route::get('/activities/{slug}', [ActivityLandingController::class, 'show'])->name('detail-activities');
-    Route::get('/polling', function () {
-        return view('landing.pages.polling.polling');
-    })->name('polling');
-    Route::get('/polling/form/{id}', function () {
-        return view('landing.pages.polling.polling_form');
-    })->name('polling-form');
+    Route::get('/polling', [PollLandingController::class, 'index'])->name('polling');
+    Route::post('/polling/form/{id}', [PollLandingController::class, 'show'])->name('polling-form');
+    Route::post('/polling/submit-form', [PollLandingController::class, 'storeAnswer'])->name('submit-polling');
     Route::get('/contact', [ContactLandingController::class, 'index'])->name('contact');
 });
 

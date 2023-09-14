@@ -15,6 +15,8 @@ class Poll extends Model implements HasQuestions
     protected $primaryKey = 'id';
     protected $fillable = ['title', 'start', 'end', 'description'];
 
+    protected $dates = ['start', 'end'];
+
     /**
      * One-to-Many relationship with Questions Model
      *

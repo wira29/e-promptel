@@ -7,6 +7,7 @@
         <title>E-Promptel</title>
         <meta name="description" content="" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="csrf-token" content="{{ csrf_token() }}" />
         <link
             rel="shortcut icon"
             type="image/x-icon"
@@ -286,6 +287,7 @@
         <script src="{{
                 asset('assets/js/vendor/jquery-3.6.0.min.js')
             }}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
         <script src="{{ asset('assets/js/vendor/popper.min.js') }}"></script>
         <script src="{{ asset('assets/js/vendor/bootstrap.min.js') }}"></script>
         <script src="{{
