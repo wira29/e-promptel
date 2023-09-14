@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Contracts\Interfaces\VideoLandingInterface;
 use App\Http\Controllers\Controller;
 use Illuminate\View\View;
+use Jorenvh\Share\ShareFacade;
 
 class VideoLandingController extends Controller
 {
@@ -40,7 +41,13 @@ class VideoLandingController extends Controller
     {
         $data = [
             'video' => $this->video->show($slug),
-            'latests' => $this->video->getLatest(5)
+            'latests' => $this->video->getLatest(5),
+            'share' => ShareFacade::page(url()->full(), 'Share title')
+                ->facebook()
+                ->twitter()
+                ->telegram()
+                ->whatsapp()
+                ->getRawLinks(),
         ];
 
         return view('landing.pages.videos.detail_video', $data);

@@ -40,28 +40,18 @@
                                     class="header-social-network d-inline-block list-inline mr-15"
                                 >
                                     <li class="list-inline-item text-muted">
-                                        <span>Share this: </span>
+                                        <span>Bagikan: </span>
                                     </li>
-                                    <li class="list-inline-item">
-                                        <a
-                                            class="social-icon fb text-xs-center"
-                                            target="_blank"
-                                            href="https://www.facebook.com/sharer/sharer.php?u={{ url()->full() }}"
-                                            ><i
-                                                class="elegant-icon social_facebook"
-                                            ></i
-                                        ></a>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <a
-                                            class="social-icon tw text-xs-center"
-                                            target="_blank"
-                                            href="https://twitter.com/share?url={{ url()->full() }}"
-                                            ><i
-                                                class="elegant-icon social_twitter"
-                                            ></i
-                                        ></a>
-                                    </li>
+                                    @foreach($share as $idx => $s)
+                                        <li class="list-inline-item">
+                                            <a
+                                                class="social-icon fb text-xs-center"
+                                                target="_blank"
+                                                href="{{ $s }}"
+                                                style="width: min-content!important; padding: 0 8px; background-color: rgba(0,0,0, 0.3)"
+                                            >{{ $idx }}</a>
+                                        </li>
+                                    @endforeach
                                 </ul>
                             </div>
                         </div>

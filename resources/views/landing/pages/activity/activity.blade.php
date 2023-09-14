@@ -1,10 +1,10 @@
 @extends('landing.layouts.app') @section('content')
 <div class="archive-header pt-50">
     <div class="container">
-        <h2 class="font-weight-900">Artikel</h2>
+        <h2 class="font-weight-900">Kegiatan</h2>
         <div class="breadcrumb">
             <a href="{{ route('landing.home') }}" rel="nofollow">Beranda</a>
-            <span></span> Artikel
+            <span></span> Kegiatan
         </div>
         <div class="bt-1 border-color-1 mt-30 mb-50"></div>
     </div>

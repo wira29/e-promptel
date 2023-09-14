@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Contracts\Interfaces\AboutLandingInterface;
+use App\Contracts\Interfaces\AgendaLandingInterface;
 use App\Contracts\Interfaces\ArticleLandingInterface;
 use App\Contracts\Interfaces\AudioLandingInterface;
 use App\Contracts\Interfaces\OrganizationLandingInterface;
@@ -19,8 +20,9 @@ class HomeLandingController extends Controller
     private VideoLandingInterface $videos;
     private ArticleLandingInterface $article;
     private AudioLandingInterface $audio;
+    private AgendaLandingInterface $agenda;
 
-    public function __construct(AboutLandingInterface $about, VisionMissionLandingInterface $visionMission, OrganizationLandingInterface $organization, VideoLandingInterface $videos, ArticleLandingInterface $article, AudioLandingInterface $audio)
+    public function __construct(AboutLandingInterface $about, VisionMissionLandingInterface $visionMission, OrganizationLandingInterface $organization, VideoLandingInterface $videos, ArticleLandingInterface $article, AudioLandingInterface $audio, AgendaLandingInterface $agenda)
     {
         $this->about = $about;
         $this->visionMission = $visionMission;
@@ -28,6 +30,7 @@ class HomeLandingController extends Controller
         $this->videos = $videos;
         $this->article = $article;
         $this->audio = $audio;
+        $this->agenda = $agenda;
     }
 
     /**
@@ -41,6 +44,7 @@ class HomeLandingController extends Controller
             "videos" => $this->videos->getLatest(3),
             "articles" => $this->article->getLatest(4),
             "audios" => $this->audio->getLatest(4),
+            "agendas" => $this->agenda->getLatest(4)
         ];
         return view('landing.pages.home.index', $data);
     }

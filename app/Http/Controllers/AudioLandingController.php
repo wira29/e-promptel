@@ -6,6 +6,7 @@ use App\Contracts\Interfaces\AudioLandingInterface;
 use App\Contracts\Interfaces\VideoLandingInterface;
 use App\Http\Controllers\Controller;
 use Illuminate\View\View;
+use Jorenvh\Share\ShareFacade;
 
 class AudioLandingController extends Controller
 {
@@ -41,7 +42,13 @@ class AudioLandingController extends Controller
     {
         $data = [
             'audio' => $this->audio->show($slug),
-            'latests' => $this->audio->getLatest(5)
+            'latests' => $this->audio->getLatest(5),
+            'share' => ShareFacade::page(url()->full(), 'Share title')
+                ->facebook()
+                ->twitter()
+                ->telegram()
+                ->whatsapp()
+                ->getRawLinks(),
         ];
 
         return view('landing.pages.audios.detail_audio', $data);
