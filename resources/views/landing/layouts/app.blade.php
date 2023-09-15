@@ -34,7 +34,7 @@
         <div class="scroll-progress primary-bg"></div>
         <!-- Start Preloader -->
         <div class="preloader text-center">
-                <img src="{{ asset("logo.png") }}" width="80" alt="logo" />
+                <img src="{{ asset("logo.png") }}" width="150" alt="logo" />
 {{--            <div class="circle">--}}
 {{--            </div>--}}
         </div>

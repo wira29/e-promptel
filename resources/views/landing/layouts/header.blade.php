@@ -8,7 +8,7 @@
                             class="logo"
                             src="{{ asset('logo.png') }}"
                             alt=""
-                            width="80"
+                            width="150"
                     />
                     </a>
                 </div>
