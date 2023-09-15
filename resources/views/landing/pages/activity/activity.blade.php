@@ -45,7 +45,7 @@
                                                 <div
                                                     class="entry-meta meta-0 font-small mb-10"
                                                 >
-                                                    <a href="category.html"
+                                                    <a href="#"
                                                     ><span
                                                             class="post-cat text-primary"
                                                         >{{ $activity->category->name }}</span

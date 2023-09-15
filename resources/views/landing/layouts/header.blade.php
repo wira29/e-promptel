@@ -35,7 +35,7 @@
                         <li class="menu-item-has-children">
                             <a
                                 class="{{ request()->routeIs('landing.home') || request()->routeIs('landing.about') || request()->routeIs('landing.vision-mission') || request()->routeIs('landing.organization') ? 'active' : '' }}"
-                                href="index-2.html"
+                                href="#"
                             >
                                 Beranda</a
                             >
@@ -63,7 +63,7 @@
                         <li class="menu-item-has-children">
                             <a
                                 class="{{ request()->routeIs('landing.activities') || request()->routeIs('landing.agenda') ? 'active' : '' }}"
-                                href="index-2.html"
+                                href="#"
                             >
                                 Berita</a
                             >
@@ -81,7 +81,7 @@
                         <li class="menu-item-has-children">
                             <a
                                 class="{{ request()->routeIs('landing.videos') || request()->routeIs('landing.audios') || request()->routeIs('landing.articles') ? 'active' : '' }}"
-                                href="index-2.html"
+                                href="#"
                             >
                                 Layanan</a
                             >
@@ -122,18 +122,66 @@
                     <ul id="mobile-menu" class="d-block d-lg-none text-muted">
                         <li class="menu-item-has-children">
                             <a href="#">Beranda</a>
+                            <ul class="sub-menu text-muted font-small">
+                                <li>
+                                    <a href="{{ route('landing.home') }}">Beranda</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('landing.about') }}"
+                                    >Tentang</a
+                                    >
+                                </li>
+                                <li>
+                                    <a href="{{ route('landing.vision-mission') }}"
+                                    >Visi Misi</a
+                                    >
+                                </li>
+                                <li>
+                                    <a href="{{ route('landing.organization') }}"
+                                    >Struktur Organisasi</a
+                                    >
+                                </li>
+                            </ul>
                         </li>
                         <li class="menu-item-has-children">
                             <a href="#">Berita</a>
+
+                            <ul class="sub-menu text-muted font-small">
+                                <li>
+                                    <a href="{{ route('landing.agenda') }}">Agenda</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('landing.activities') }}"
+                                    >Kegiatan</a
+                                    >
+                                </li>
+                            </ul>
                         </li>
                         <li class="menu-item-has-children">
                             <a href="#">Layanan</a>
+                            <ul class="sub-menu text-muted font-small">
+                                <li>
+                                    <a href="{{ route('landing.videos') }}"
+                                    >Materi Video</a
+                                    >
+                                </li>
+                                <li>
+                                    <a href="{{ route('landing.audios') }}"
+                                    >Materi Audio</a
+                                    >
+                                </li>
+                                <li>
+                                    <a href="{{ route('landing.articles') }}"
+                                    >Artikel</a
+                                    >
+                                </li>
+                            </ul>
                         </li>
                         <li class="menu-item-has-children">
-                            <a href="#">Poling</a>
+                            <a  href="{{ route('landing.polling') }}">Poling</a>
                         </li>
                         <li class="menu-item-has-children">
-                            <a href="#">Kontak</a>
+                            <a href="{{ route('landing.contact') }}">Kontak</a>
                         </li>
                     </ul>
                 </nav>

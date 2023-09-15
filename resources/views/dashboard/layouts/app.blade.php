@@ -30,13 +30,13 @@
 <!-- Preloader -->
 <div class="preloader">
     <img src="{{ asset('logo.png') }}"
-         alt="loader" class="lds-ripple img-fluid"/>
+         alt="loader" width="150" style="width: 150px!important;" class="lds-ripple img-fluid"/>
 </div>
 <!-- Preloader -->
-<div class="preloader">
-    <img src="{{ asset('logo.png') }}"
-         alt="loader" class="lds-ripple img-fluid"/>
-</div>
+{{--<div class="preloader">--}}
+{{--    <img src="{{ asset('logo.png') }}"--}}
+{{--         alt="loader" width="150" class="lds-ripple img-fluid"/>--}}
+{{--</div>--}}
 <!--  Body Wrapper -->
 <div class="page-wrapper" id="main-wrapper" data-theme="orange_theme" data-layout="vertical" data-sidebartype="full"
      data-sidebar-position="fixed" data-header-position="fixed">

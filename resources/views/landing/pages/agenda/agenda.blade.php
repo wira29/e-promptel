@@ -66,7 +66,7 @@
                                                         class="post-excerpt mb-25 font-small text-muted"
                                                     >
                                                         <p>
-                                                            {{ substr(strip_tags($agenda->content), 20) }}...
+                                                            {{ substr(strip_tags($agenda->content), 0, 20) }}...
                                                         </p>
                                                     </div>
                                                     <div

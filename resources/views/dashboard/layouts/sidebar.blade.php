@@ -2,7 +2,7 @@
     <a href="{{ route('dashboard.home') }}" class="text-nowrap logo-img">
         <img
             src="{{ asset('logo.png') }}"
-            class="dark-logo" width="100" alt=""/>
+            class="dark-logo" width="150" alt=""/>
         {{--        <img--}}
         {{--            src="https://demos.adminmart.com/premium/bootstrap/modernize-bootstrap/package/dist/images/logos/dark-logo.svg"--}}
         {{--            class="dark-logo" width="180" alt=""/>--}}
