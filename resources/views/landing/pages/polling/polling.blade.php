@@ -75,7 +75,7 @@
                         <div class="loop-list loop-list-style-1">
                             @foreach($polls as $poll)
                             <article
-                                class="hover-up-2 p-25 has-border transition-normal wow fadeInUp animated"
+                                class="hover-up- mt-25 p-25 has-border transition-normal wow fadeInUp animated"
                             >
                                 <div class="row mb-40 list-style-2">
                                     <div class="col-md-12 align-self-center">

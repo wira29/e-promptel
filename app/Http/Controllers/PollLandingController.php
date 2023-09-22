@@ -99,7 +99,7 @@ class PollLandingController extends Controller
             $countAnswers[$question->id] = array_fill(0 , 5, 0);
             foreach ($pollAnswers as $pollAnswer) {
                 if($pollAnswer->question->id == $question->id){
-                    $countAnswers[$question->id][$pollAnswer->answer] = $pollAnswer->count;
+                    $countAnswers[$question->id][$pollAnswer->answer] = intval($pollAnswer->count);
                 }
             }
 
