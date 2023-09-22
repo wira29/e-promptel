@@ -28,6 +28,8 @@
                 background: grey!important;
             }
         </style>
+
+        <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     </head>
 
     <body class="theme-mode">

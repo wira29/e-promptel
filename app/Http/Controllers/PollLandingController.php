@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Contracts\Interfaces\CountPollingAnswerInterface;
 use App\Contracts\Interfaces\PollAnswerInterface;
 use App\Contracts\Interfaces\PollingLandingInterface;
 use App\Contracts\Interfaces\QuestionLandingInterface;
 use App\Contracts\Interfaces\RespondentInterface;
+use App\Models\Poll;
 use Carbon\Carbon;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
@@ -18,13 +20,15 @@ class PollLandingController extends Controller
     private QuestionLandingInterface $question;
     private RespondentInterface $respondent;
     private PollAnswerInterface $pollAnswer;
+    private CountPollingAnswerInterface $countPollingAnswer;
 
-    public function __construct(PollingLandingInterface $poll, QuestionLandingInterface $question, RespondentInterface $respondent, PollAnswerInterface $pollAnswer)
+    public function __construct(PollingLandingInterface $poll, QuestionLandingInterface $question, RespondentInterface $respondent, PollAnswerInterface $pollAnswer, CountPollingAnswerInterface $countPollingAnswer)
     {
         $this->poll = $poll;
         $this->question = $question;
         $this->respondent = $respondent;
         $this->pollAnswer = $pollAnswer;
+        $this->countPollingAnswer = $countPollingAnswer;
     }
 
     /**
@@ -57,7 +61,7 @@ class PollLandingController extends Controller
             "respondent" => $respondent,
         ];
 
-        return \view('landing.pages.polling.polling_form', $data);
+        return view('landing.pages.polling.polling_form', $data);
     }
 
     /**
@@ -66,7 +70,7 @@ class PollLandingController extends Controller
      * @param Request $request
      * @return JsonResponse
      */
-    public  function storeAnswer(Request $request): JsonResponse
+    public function storeAnswer(Request $request): JsonResponse
     {
         foreach ($request->questions_id as $idx => $questionId) {
             $this->pollAnswer->store([
@@ -77,5 +81,33 @@ class PollLandingController extends Controller
             ]);
         }
         return response()->json(["message" => "Berhasil mengisi polling !!"]);
+    }
+
+    /**
+     * display result polling
+     *
+     * @param Poll $poll
+     * @return View
+     */
+    public function pollResult(Poll $poll): View
+    {
+
+        $pollAnswers = $this->countPollingAnswer->countPollingAnswer($poll->id);
+        $countAnswers = [];
+
+        foreach ($poll->questions as $question){
+            $countAnswers[$question->id] = array_fill(0 , 5, 0);
+            foreach ($pollAnswers as $pollAnswer) {
+                if($pollAnswer->question->id == $question->id){
+                    $countAnswers[$question->id][$pollAnswer->answer] = $pollAnswer->count;
+                }
+            }
+
+        }
+        $data = [
+            'poll' => $poll,
+            'count' => $countAnswers,
+        ];
+        return view('landing.pages.polling.polling_result', $data);
     }
 }

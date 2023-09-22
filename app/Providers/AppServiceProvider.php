@@ -15,6 +15,7 @@ use App\Contracts\Interfaces\AudioLandingInterface;
 use App\Contracts\Interfaces\CategoryInterface;
 use App\Contracts\Interfaces\ContactInterface;
 use App\Contracts\Interfaces\ContactLandingInterface;
+use App\Contracts\Interfaces\CountPollingAnswerInterface;
 use App\Contracts\Interfaces\OrganizationInterface;
 use App\Contracts\Interfaces\OrganizationLandingInterface;
 use App\Contracts\Interfaces\PollAnswerInterface;
@@ -43,6 +44,7 @@ use App\Contracts\Repositories\ContactRepository;
 use App\Contracts\Repositories\OrganizationLandingRepository;
 use App\Contracts\Repositories\OrganizationRepository;
 use App\Contracts\Repositories\PollAnswerRepository;
+use App\Contracts\Repositories\PollingAnswerRepository;
 use App\Contracts\Repositories\PollingLandingRepository;
 use App\Contracts\Repositories\PollRepository;
 use App\Contracts\Repositories\QuestionLandingRepository;
@@ -83,6 +85,7 @@ class AppServiceProvider extends ServiceProvider
         QuestionLandingInterface::class => QuestionLandingRepository::class,
         RespondentInterface::class => RespondentRepository::class,
         PollAnswerInterface::class => PollAnswerRepository::class,
+        CountPollingAnswerInterface::class => PollingAnswerRepository::class,
     ];
 
     /**

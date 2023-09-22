@@ -53,6 +53,7 @@ Route::name('landing.')->group(function () {
     Route::get('/activities', [ActivityLandingController::class, 'index'])->name('activities');
     Route::get('/activities/{slug}', [ActivityLandingController::class, 'show'])->name('detail-activities');
     Route::get('/polling', [PollLandingController::class, 'index'])->name('polling');
+    Route::get('/polling/{poll}', [PollLandingController::class, 'pollResult'])->name('polling-result');
     Route::post('/polling/form/{id}', [PollLandingController::class, 'show'])->name('polling-form');
     Route::post('/polling/submit-form', [PollLandingController::class, 'storeAnswer'])->name('submit-polling');
     Route::get('/contact', [ContactLandingController::class, 'index'])->name('contact');
