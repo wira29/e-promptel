@@ -1001,6 +1001,7 @@ header .search-icon .ti-close,
     z-index: 99;
 }
 .header-top {
+    background: #0f4c75;
     border-bottom-width: 1px;
     border-bottom-style: solid;
     border-bottom-color: var(--mutted-border-color);
@@ -1031,8 +1032,13 @@ header .search-icon .ti-close,
 }
 
 /*Footer layouts*/
+footer {
+    background: #0f4c75 !important;
+}
+
 .footer-area {
-    color: #666;
+    /* color: #666; */
+    color: white !important;
 }
 .footer-area ul li + li {
     margin-top: 10px;
@@ -1096,8 +1102,8 @@ header .search-icon .ti-close,
 }
 .pagination-area .page-item.active .page-link {
     color: #fff !important;
-    background-color: var(--color-primary)!important;
-    border-color: var(--color-primary)!important;
+    background-color: var(--color-primary) !important;
+    border-color: var(--color-primary) !important;
 }
 .page-item:last-child .page-link,
 .page-item:first-child .page-link {
