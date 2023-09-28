@@ -6,9 +6,9 @@
                     <a href="{{ route('landing.home') }}">
                         <img
                             class="logo"
-                            src="{{ asset('logo.png') }}"
+                            src="{{ asset('logo-white.png') }}"
                             alt=""
-                            width="150"
+                            width="100%"
                         />
                     </a>
                 </div>
@@ -19,7 +19,7 @@
                     <a
                         class="btn btn-radius bg-white ml-15 font-small box-shadow"
                         href="{{ route('login') }}"
-                        >Masuk</a
+                    >Masuk</a
                     >
                 </div>
             </div>
@@ -42,12 +42,12 @@
                             <ul class="sub-menu text-muted font-small">
                                 <li>
                                     <a href="{{ route('landing.home') }}"
-                                        >Beranda</a
+                                    >Beranda</a
                                     >
                                 </li>
                                 <li>
                                     <a href="{{ route('landing.about') }}"
-                                        >Tentang</a
+                                    >Tentang</a
                                     >
                                 </li>
                                 <li>
@@ -55,7 +55,7 @@
                                         href="{{
                                             route('landing.vision-mission')
                                         }}"
-                                        >Visi Misi</a
+                                    >Visi Misi</a
                                     >
                                 </li>
                                 <li>
@@ -63,7 +63,7 @@
                                         href="{{
                                             route('landing.organization')
                                         }}"
-                                        >Struktur Organisasi</a
+                                    >Struktur Organisasi</a
                                     >
                                 </li>
                             </ul>
@@ -78,12 +78,12 @@
                             <ul class="sub-menu text-muted font-small">
                                 <li>
                                     <a href="{{ route('landing.agenda') }}"
-                                        >Agenda</a
+                                    >Agenda</a
                                     >
                                 </li>
                                 <li>
                                     <a href="{{ route('landing.activities') }}"
-                                        >Kegiatan</a
+                                    >Kegiatan</a
                                     >
                                 </li>
                             </ul>
@@ -98,17 +98,17 @@
                             <ul class="sub-menu text-muted font-small">
                                 <li>
                                     <a href="{{ route('landing.videos') }}"
-                                        >Materi Video</a
+                                    >Materi Video</a
                                     >
                                 </li>
                                 <li>
                                     <a href="{{ route('landing.audios') }}"
-                                        >Materi Audio</a
+                                    >Materi Audio</a
                                     >
                                 </li>
                                 <li>
                                     <a href="{{ route('landing.articles') }}"
-                                        >Artikel</a
+                                    >Artikel</a
                                     >
                                 </li>
                             </ul>
@@ -117,14 +117,14 @@
                             <a
                                 class="{{ request()->routeIs('landing.polling') ? 'active' : '' }}"
                                 href="{{ route('landing.polling') }}"
-                                >Polling</a
+                            >Polling</a
                             >
                         </li>
                         <li>
                             <a
                                 class="{{ request()->routeIs('landing.contact') ? 'active' : '' }}"
                                 href="{{ route('landing.contact') }}"
-                                >Kontak</a
+                            >Kontak</a
                             >
                         </li>
                     </ul>
@@ -135,12 +135,12 @@
                             <ul class="sub-menu text-muted font-small">
                                 <li>
                                     <a href="{{ route('landing.home') }}"
-                                        >Beranda</a
+                                    >Beranda</a
                                     >
                                 </li>
                                 <li>
                                     <a href="{{ route('landing.about') }}"
-                                        >Tentang</a
+                                    >Tentang</a
                                     >
                                 </li>
                                 <li>
@@ -148,7 +148,7 @@
                                         href="{{
                                             route('landing.vision-mission')
                                         }}"
-                                        >Visi Misi</a
+                                    >Visi Misi</a
                                     >
                                 </li>
                                 <li>
@@ -156,7 +156,7 @@
                                         href="{{
                                             route('landing.organization')
                                         }}"
-                                        >Struktur Organisasi</a
+                                    >Struktur Organisasi</a
                                     >
                                 </li>
                             </ul>
@@ -167,12 +167,12 @@
                             <ul class="sub-menu text-muted font-small">
                                 <li>
                                     <a href="{{ route('landing.agenda') }}"
-                                        >Agenda</a
+                                    >Agenda</a
                                     >
                                 </li>
                                 <li>
                                     <a href="{{ route('landing.activities') }}"
-                                        >Kegiatan</a
+                                    >Kegiatan</a
                                     >
                                 </li>
                             </ul>
@@ -182,17 +182,17 @@
                             <ul class="sub-menu text-muted font-small">
                                 <li>
                                     <a href="{{ route('landing.videos') }}"
-                                        >Materi Video</a
+                                    >Materi Video</a
                                     >
                                 </li>
                                 <li>
                                     <a href="{{ route('landing.audios') }}"
-                                        >Materi Audio</a
+                                    >Materi Audio</a
                                     >
                                 </li>
                                 <li>
                                     <a href="{{ route('landing.articles') }}"
-                                        >Artikel</a
+                                    >Artikel</a
                                     >
                                 </li>
                             </ul>
