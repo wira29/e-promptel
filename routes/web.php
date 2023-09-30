@@ -90,6 +90,7 @@ Auth::routes();
 Route::middleware('auth')->prefix('dashboard')->group(function () {
     Route::name('dashboard.')->group(function () {
         Route::get('/', [DashboardController::class, 'index'])->name('home');
+        Route::get('/export-excel/{poll}', [PollController::class, 'export'])->name('export-poll');
     });
 
     Route::resources([

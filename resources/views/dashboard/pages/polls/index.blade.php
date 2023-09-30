@@ -51,6 +51,8 @@
                             </div>
                         </div>
                         <div class="text-end">
+                            <a class="btn btn-outline-dark me-3"
+                               href="{{ route('dashboard.export-poll', $poll->id) }}">Download Excel</a>
                             <a class="btn btn-outline-success me-3"
                                href="{{ route('polls.show', $poll->id) }}">Detail</a>
                             <a class="btn btn-outline-primary me-3"

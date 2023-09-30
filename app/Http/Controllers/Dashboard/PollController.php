@@ -3,11 +3,16 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Contracts\Interfaces\PollInterface;
+use App\Exports\PollExport;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PollRequest;
 use App\Models\Poll;
+use App\Models\Question;
+use App\Models\Respondent;
+use Carbon\Carbon;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;
+use Maatwebsite\Excel\Facades\Excel;
 
 class PollController extends Controller
 {
@@ -102,5 +107,16 @@ class PollController extends Controller
         if (!$destroy) return back()->with('errors', trans('alert.delete_constrained'));
 
         return back()->with('success', trans('alert.delete_success'));
+    }
+
+    /**
+     * export poll
+     *
+     * @param Poll $poll
+     * @return \Symfony\Component\HttpFoundation\BinaryFileResponse
+     */
+    public function export(Poll $poll)
+    {
+        return Excel::download(new PollExport($poll->id), $poll->title . Carbon::now() . '.xlsx');
     }
 }

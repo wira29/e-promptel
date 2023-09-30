@@ -6,7 +6,7 @@
                     <a href="{{ route('landing.home') }}">
                         <img
                             class="logo"
-                            src="{{ asset('logo.png') }}"
+                            src="{{ asset('logo-white.png') }}"
                             alt=""
                             width="150"
                         />

@@ -23,4 +23,14 @@ class PollAnswer extends Model
     {
         return $this->belongsTo(Question::class);
     }
+
+    /**
+     * many to one relationship with respondent
+     *
+     * @return BelongsTo
+     */
+    public function respondent(): BelongsTo
+    {
+        return $this->belongsTo(Respondent::class);
+    }
 }
