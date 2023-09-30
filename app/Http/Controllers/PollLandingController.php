@@ -10,7 +10,6 @@ use App\Contracts\Interfaces\RespondentInterface;
 use App\Models\Poll;
 use Carbon\Carbon;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 
@@ -95,10 +94,10 @@ class PollLandingController extends Controller
         $pollAnswers = $this->countPollingAnswer->countPollingAnswer($poll->id);
         $countAnswers = [];
 
-        foreach ($poll->questions as $question){
-            $countAnswers[$question->id] = array_fill(0 , 5, 0);
+        foreach ($poll->questions as $question) {
+            $countAnswers[$question->id] = array_fill(0, 5, 0);
             foreach ($pollAnswers as $pollAnswer) {
-                if($pollAnswer->question->id == $question->id){
+                if ($pollAnswer->question->id == $question->id) {
                     $countAnswers[$question->id][$pollAnswer->answer] = intval($pollAnswer->count);
                 }
             }
