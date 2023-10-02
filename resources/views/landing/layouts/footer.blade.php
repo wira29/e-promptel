@@ -8,8 +8,7 @@
                     </div>
                     <div class="textwidget">
                         <p class="text-white">
-                            Start writing, no matter what. The water does not
-                            flow until the faucet is turned on.
+                            Teaching Factory (TeFa) House of Health Promotion dari Program Studi Sarjana Terapan Promosi Kesehatan Jurusan Kesehatan Politeknik Negeri Jember merupakan teaching factory yang bergerak dalam hal mempromosikan dan mengedukasi masyarakat tentang kesehatan. Website ini berisi tentang artikel, video, dan audio tentang edukasi kesehatan serta pengumuman dan berita-berita kegiatan yang diselenggarakan oleh TeFa House of Health Promotion Politeknik Negeri Jember.
                         </p>
                     </div>
                 </div>
@@ -75,32 +74,30 @@
                         >
                             <li class="list-inline-item">
                                 <a
-                                    class="fb"
-                                    href="#"
+                                    href="https://www.youtube.com/@hfcpromkes"
                                     target="_blank"
-                                    title="Facebook"
-                                    ><i class="elegant-icon social_facebook"></i
-                                ></a>
+                                    title="Youtube"
+                                    >
+                                    <img src="{{ asset('assets/imgs/youtube-icon.svg') }}" />
+                                </a>
                             </li>
                             <li class="list-inline-item">
                                 <a
-                                    class="tw"
-                                    href="#"
+                                    href="https://www.instagram.com/promkespolije_/"
                                     target="_blank"
-                                    title="Tweet now"
-                                    ><i class="elegant-icon social_twitter"></i
-                                ></a>
+                                    title="Instagram"
+                                    >
+                                    <img src="{{ asset('assets/imgs/instagram-icon.svg') }}" />
+                                </a>
                             </li>
                             <li class="list-inline-item">
                                 <a
-                                    class="pt"
-                                    href="#"
+                                    href="https://www.tiktok.com/@healthforchange_"
                                     target="_blank"
-                                    title="Pin it"
-                                    ><i
-                                        class="elegant-icon social_pinterest"
-                                    ></i
-                                ></a>
+                                    title="Tiktok"
+                                    >
+                                    <img src="{{ asset('assets/imgs/tiktok-icon.svg') }}" />
+                                </a>
                             </li>
                         </ul>
                     </div>
