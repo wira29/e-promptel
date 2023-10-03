@@ -79,4 +79,17 @@ class AudioRepository extends BaseRepository implements AudioInterface
             ->findOrFail($id)
             ->update($data);
     }
+
+    /**
+     * Handle count all data event from models.
+     *
+     * @param array|null $data
+     *
+     * @return int
+     */
+    public function count(?array $data): int
+    {
+        return $this->model->query()
+            ->count();
+    }
 }
