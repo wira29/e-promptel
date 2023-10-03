@@ -21,6 +21,7 @@ use App\Contracts\Interfaces\OrganizationLandingInterface;
 use App\Contracts\Interfaces\PollAnswerInterface;
 use App\Contracts\Interfaces\PollingLandingInterface;
 use App\Contracts\Interfaces\PollInterface;
+use App\Contracts\Interfaces\ProfileInterface;
 use App\Contracts\Interfaces\QuestionInterface;
 use App\Contracts\Interfaces\QuestionLandingInterface;
 use App\Contracts\Interfaces\RespondentInterface;
@@ -47,6 +48,7 @@ use App\Contracts\Repositories\PollAnswerRepository;
 use App\Contracts\Repositories\PollingAnswerRepository;
 use App\Contracts\Repositories\PollingLandingRepository;
 use App\Contracts\Repositories\PollRepository;
+use App\Contracts\Repositories\ProfileRepository;
 use App\Contracts\Repositories\QuestionLandingRepository;
 use App\Contracts\Repositories\QuestionRepository;
 use App\Contracts\Repositories\RespondentRepository;
@@ -86,6 +88,7 @@ class AppServiceProvider extends ServiceProvider
         RespondentInterface::class => RespondentRepository::class,
         PollAnswerInterface::class => PollAnswerRepository::class,
         CountPollingAnswerInterface::class => PollingAnswerRepository::class,
+        ProfileInterface::class => ProfileRepository::class
     ];
 
     /**

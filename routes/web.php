@@ -59,32 +59,6 @@ Route::name('landing.')->group(function () {
     Route::get('/contact', [ContactLandingController::class, 'index'])->name('contact');
 });
 
-//Route::get('/agenda', function () {
-//    return view('landing.pages.agenda.agenda');
-//})->name('agenda');
-//Route::get('/activities', function () {
-//    return view('landing.pages.activity.activity');
-//})->name('activities');
-//Route::get('/news/{id}', function () {
-//    return view('landing.pages.news.detail_news');
-//})->name('detail-news');
-//Route::get('/videos', function () {
-//    return view('landing.pages.videos.videos');
-//})->name('videos');
-//Route::get('/videos/{id}', function () {
-//    return view('landing.pages.videos.detail_video');
-//})->name('detail-videos');
-//Route::get('/audios', function () {
-//    return view('landing.pages.audios.audios');
-//})->name('audios');
-//Route::get('/audios/{id}', function () {
-//    return view('landing.pages.audios.detail_audio');
-//})->name('detail-audio');
-//Route::get('/articles', function () {
-//    return view('landing.pages.articles.articles');
-//})->name('articles');
-
-
 Auth::routes();
 
 Route::middleware('auth')->prefix('dashboard')->group(function () {
@@ -114,7 +88,8 @@ Route::middleware('auth')->prefix('dashboard')->group(function () {
 
     Route::name('user.')->group(function () {
         Route::get('profile', [ProfileController::class, 'index'])->name('profile');
-
+        Route::get('edit-profile', [ProfileController::class, 'edit'])->name('edit.profile');
+        Route::patch('change-profile', [ProfileController::class, 'update'])->name('change.profile');
         Route::patch('change-password', [ChangePasswordController::class, 'update'])->name('change-password');
     });
 });

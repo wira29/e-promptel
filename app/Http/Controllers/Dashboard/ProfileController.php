@@ -2,17 +2,30 @@
 
 namespace App\Http\Controllers\Dashboard;
 
+use App\Contracts\Interfaces\ProfileInterface;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class ProfileController extends Controller
 {
+    private ProfileInterface $profile;
+
+    public function __construct(ProfileInterface $profile)
+    {
+        $this->profile = $profile;
+    }
+
     /**
      * Display a listing of the resource.
+     *
+     * @return View
      */
-    public function index()
+    public function index(): View
     {
-        //
+        $data = $this->profile->get();
+
+        return view('dashboard.pages.profile.index', compact('data'));
     }
 
     /**
