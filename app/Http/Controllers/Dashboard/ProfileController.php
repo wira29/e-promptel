@@ -4,16 +4,20 @@ namespace App\Http\Controllers\Dashboard;
 
 use App\Contracts\Interfaces\ProfileInterface;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Http\Requests\ProfileRequest;
+use App\Services\ProfileService;
 use Illuminate\View\View;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class ProfileController extends Controller
 {
     private ProfileInterface $profile;
+    private ProfileService $service;
 
-    public function __construct(ProfileInterface $profile)
+    public function __construct(ProfileInterface $profile, ProfileService $service)
     {
         $this->profile = $profile;
+        $this->service = $service;
     }
 
     /**
@@ -29,50 +33,27 @@ class ProfileController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Display an edit of the resource.
+     *
+     * @return View
      */
-    public function create()
+    public function edit(): View
     {
-        //
+        $employee = $this->profile->get();
+
+        return view('dashboard.pages.profile.edit', compact('employee'));
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Display an edit action of the resource.
+     *
+     * @param ProfileRequest $request
+     * @return RedirectResponse
      */
-    public function store(Request $request)
+    public function update(ProfileRequest $request): RedirectResponse
     {
-        //
-    }
+        $this->profile->update(auth()->id(), $this->service->update($request));
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        return to_route('user.profile')->with('success', trans('alert.update_success'));
     }
 }

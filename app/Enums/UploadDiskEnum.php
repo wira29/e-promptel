@@ -8,4 +8,5 @@ enum UploadDiskEnum: string
     case ORGANIZATIONS = 'organizations';
     case AGENDAS = 'agendas';
     case ACTIVITIES = 'activities';
+    case USER_PHOTOS = 'user_photos';
 }

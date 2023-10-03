@@ -28,14 +28,9 @@
                                             <td>{{ $data->username }}</td>
                                         </tr>
                                         <tr>
-                                            <td>NIK</td>
+                                            <td>NIP</td>
                                             <td>:</td>
-                                            <td>{{ $data->national_identity_number }}</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Email</td>
-                                            <td>:</td>
-                                            <td>{{ $data->email }}</td>
+                                            <td>{{ $data->civil_identity_number }}</td>
                                         </tr>
                                         <tr>
                                             <td><a href="{{ route('user.edit.profile') }}"
